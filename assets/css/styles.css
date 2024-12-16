@@ -81,3 +81,7 @@
 #playerSection .bi-play-circle-fill {
   fill: #fff;
 }
+
+#playerSection {
+  margin-bottom: 30px;
+}
