@@ -1,54 +1,5 @@
-.card{
-    background-color: #242424;
-}
-
-.card p{
-    color: rgb(153, 153, 153);
-    font-size: 0.8rem;
-    margin: 0;
-}
-
-.card h4{
-    font-weight: 400;
-    font-size: 1.2rem;
-}
-
-.bi-heart, .bi-heart-fill{
-    color: green;
-    cursor: pointer;
-    font-size: 2rem;
-}
-
-.bi-three-dots-vertical{
-    color:rgb(153, 153, 153);
-    font-size: 1.7rem;
-}
-
-.bi-three-dots-vertical:hover{
-    color:white;
-    font-size: 1.7rem;
-    cursor: pointer;
-}
-
-.play-div{
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(26, 26, 26);
-    border-radius: 30px;
-}
-.bi-play-fill{
-    color: white;
-    font-size: 2rem;
-}
-
-@media screen and (min-width: 1200px) {
-    .albums{
-        display: none;
-    }
-}
-
-html, body {
+html,
+body, header{
     background-color: #121212;
 }
 
@@ -56,8 +7,8 @@ html, body {
     background-color: #2C2C2C;
 }
 
-@media screen and (max-width: 576px){
-    .navHome{
+@media screen and (max-width: 576px) {
+    .navHome {
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -66,59 +17,114 @@ html, body {
         justify-content: space-evenly;
         align-items: center;
     }
-    .player{
+
+    .player {
         position: fixed;
         bottom: 9.5%;
         left: 3%;
     }
 }
 
-.card{
+.card {
     background-color: #242424;
 }
 
-.card p{
+.card p {
     color: rgb(153, 153, 153);
     font-size: 0.8rem;
     margin: 0;
 }
 
-.card h4{
+.card h4 {
     font-weight: 400;
     font-size: 1.2rem;
 }
 
-.bi-heart, .bi-heart-fill{
+.bi-heart,
+.bi-heart-fill {
     color: green;
     cursor: pointer;
     font-size: 2rem;
 }
 
-.bi-three-dots-vertical{
-    color:rgb(153, 153, 153);
+.bi-three-dots-vertical {
+    color: rgb(153, 153, 153);
     font-size: 1.7rem;
 }
 
-.bi-three-dots-vertical:hover{
-    color:white;
+.bi-three-dots-vertical:hover {
+    color: white;
     font-size: 1.7rem;
     cursor: pointer;
 }
 
-.play-div{
+.play-div {
     cursor: pointer;
     width: 40px;
     height: 40px;
     background-color: rgb(26, 26, 26);
     border-radius: 30px;
 }
-.bi-play-fill{
+
+.bi-play-fill {
     color: white;
     font-size: 2rem;
 }
 
 @media screen and (min-width: 1200px) {
-    .albums{
+    .albums {
+        display: none;
+    }
+}
+
+.card {
+    background-color: #242424;
+}
+
+.card p {
+    color: rgb(153, 153, 153);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.card h4 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.bi-heart,
+.bi-heart-fill {
+    color: green;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.bi-three-dots-vertical {
+    color: rgb(153, 153, 153);
+    font-size: 1.7rem;
+}
+
+.bi-three-dots-vertical:hover {
+    color: white;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.play-div {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(26, 26, 26);
+    border-radius: 30px;
+}
+
+.bi-play-fill {
+    color: white;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .albums {
         display: none;
     }
 }
@@ -134,46 +140,69 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-  }
-  
-  .player-container {
+}
+
+.player-container {
     height: 60px;
     padding: 0 15px;
-  }
-  
-  .song-cover {
+}
+
+.song-cover {
     width: 40px;
     height: 40px;
     object-fit: cover;
     border-radius: 5px;
-  }
-  
-  .song-title-container {
+}
+
+.song-title-container {
     width: 200px;
     position: relative;
-  }
-  
-  /* animazione testo barra */
-  
-  .marquee {
+}
+
+/* animazione testo barra */
+
+.marquee {
     white-space: nowrap;
     animation: marquee 10s linear infinite;
-  }
-  
-  .player-icon {
+}
+
+.player-icon {
     font-size: 1.5rem;
-  }
-  
-  @keyframes marquee {
+}
+
+@keyframes marquee {
     0% {
-      transform: translateX(170%);
+        transform: translateX(170%);
     }
+
     100% {
-      transform: translateX(-170%);
+        transform: translateX(-170%);
     }
-  }
-  
-  .marquee {
+}
+
+.marquee {
     display: inline-block;
     min-width: 100%;
-  }
+}
+
+.albumInfo {
+    text-align: left;
+    width: 100%;
+}
+
+.d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bandPfp {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.albumYear {
+    color: #8d8d8d;
+}
