@@ -72,3 +72,58 @@ html, body {
         display: none;
     }
 }
+
+#playerSection {
+    position: fixed;
+    bottom: 9.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .player-container {
+    height: 60px;
+    padding: 0 15px;
+  }
+  
+  .song-cover {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .song-title-container {
+    width: 200px;
+    position: relative;
+  }
+  
+  /* animazione testo barra */
+  
+  .marquee {
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+  }
+  
+  .player-icon {
+    font-size: 1.5rem;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(170%);
+    }
+    100% {
+      transform: translateX(-170%);
+    }
+  }
+  
+  .marquee {
+    display: inline-block;
+    min-width: 100%;
+  }
