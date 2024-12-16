@@ -1,3 +1,53 @@
+.card{
+    background-color: #242424;
+}
+
+.card p{
+    color: rgb(153, 153, 153);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.card h4{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.bi-heart, .bi-heart-fill{
+    color: green;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.bi-three-dots-vertical{
+    color:rgb(153, 153, 153);
+    font-size: 1.7rem;
+}
+
+.bi-three-dots-vertical:hover{
+    color:white;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.play-div{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(26, 26, 26);
+    border-radius: 30px;
+}
+.bi-play-fill{
+    color: white;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .albums{
+        display: none;
+    }
+}
+
 html, body {
     background-color: #121212;
 }
