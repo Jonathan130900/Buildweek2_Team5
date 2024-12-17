@@ -281,3 +281,13 @@ header {
    
     font-size:30px;
 }
+
+.icon-hover {
+    transition: color 0.3s ease;
+}
+.icon-hover i:hover {
+    color:green ;
+}
+.icon-hover button i:hover {
+    color:black ;
+}
