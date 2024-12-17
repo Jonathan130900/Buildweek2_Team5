@@ -81,7 +81,6 @@ header {
     left: 3%;
   }
 }
-
 /* album */
 
 .container {
@@ -96,12 +95,6 @@ header {
   }
 }
 
-.d-flex.justify-content-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .bandPfp {
   width: 35px;
   height: 35px;
@@ -111,8 +104,36 @@ header {
 
 .albumYear {
   color: #8d8d8d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
+.albumYear p {
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  .albumInfo h2 {
+    font-size: 7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.albumInfo .d-lg-flex {
+  justify-content: start;
+  gap: 1rem;
+}
+
+.albumInfo .d-flex.align-items-center {
+  gap: 0.5rem;
+}
+
+.albumInfo h6 {
+  margin: 0;
+  font-size: 1rem;
+}
 /* search css */
 
 .custom-input-group {
