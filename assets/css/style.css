@@ -11,7 +11,7 @@ header {
 }
 
 @media screen and (max-width: 991px){
-    .dropdown, #carouselHome{
+    .dropdown, .forYou{
         display: none;
     }
 }
