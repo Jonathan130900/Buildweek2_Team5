@@ -64,7 +64,7 @@ header {
 
 /* nav css */
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
     .navHome {
         position: fixed;
         bottom: 0;
@@ -78,7 +78,8 @@ header {
     .navHome2,
     .sidebar-link,
     .navHomeRight,
-    .threeDots {
+    .threeDots,
+    .mainMenu {
         display: none;
     }
 
@@ -93,7 +94,11 @@ header {
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 993px) {
+    .songTitle {
+        font-size: 4em;
+    }
+
     .tagStart {
         width: 30%;
     }
@@ -187,6 +192,146 @@ header {
 
     .sidebar-links::-webkit-scrollbar-track, main::-webkit-scrollbar-track {
         background: black;
+    }
+
+    #carouselHome .carousel-item{
+        height: 14rem;
+        background: linear-gradient(10deg, #000000 0%, #1F1F1F 60%);
+    }
+
+    #carouselHome .carousel-item h6, h2, p{
+        color: white;
+        margin: 0;
+    }
+    #carouselHome .carousel-item h6{
+        font-size: 0.6rem;
+    }
+
+    #carouselHome .carousel-item h2{
+        font-size: 3rem;
+        margin-top: 0.7rem;
+        font-weight: bolder;
+    }
+
+    #carouselHome .carousel-item p{
+        font-size: 0.8rem;
+        font-weight: 200;
+    }
+
+    #top-main-home button{
+        background-color: black;
+        border: none;
+        border-radius: 30px;
+        padding-top: 5px;
+    }
+
+    #top-main-home .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 15px;
+      width: 15px;
+      opacity: 50%;
+    }
+
+    #top-main-home .dropdown-toggle{
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 0.2rem;
+    }
+
+    #top-main-home .dropdown-toggle img{
+        border-radius: 30px;
+        margin-right: 0.5rem;
+    }
+
+    #top-main-home .dropdown-menu{
+        background-color: #282828;
+        border: none;
+        width: 15rem;
+    }
+
+    #top-main-home .dropdown-menu a{
+        color: #EAE9E9;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #top-main-home .dropdown-menu a:hover{
+        background-color: #6c6c6c;
+    }
+
+    #top-main-home .dropdown-menu hr{
+        color: #646464;
+        margin: 0;
+        margin-bottom: 0.3rem;
+    }
+
+    #buonasera{
+        font-size: 1.5rem;
+    }
+
+    #btns-carousel button{
+        padding: 0.5rem 1.4rem 0.5rem 1.4rem;
+        border: none;
+        border-radius: 20px;
+        margin-right: 1.5rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    #btns-carousel #uno{
+        background-color: #1CD760;
+    }
+
+    #btns-carousel #uno:hover{
+        color: white;
+    }
+
+    #btns-carousel #due{
+        background-color: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+    }
+
+    #btns-carousel #due:hover{
+        color: #1CD760;
+        border: 1px solid #1CD760;
+    }
+
+    #nascondi-annunci{
+        font-size: 0.7rem;
+        padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+        border-radius: 20px;
+        border: none;
+        background-color: #222222;
+        color: #666666;
+        font-weight: bold;
+    }
+
+    .cards-home-lg{
+        width: 19%;
+        background-color: #171717;
+        margin-bottom: 1.5rem;
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .cards-home-lg img{
+        border-radius: 3px;
+    }
+
+    .cards-home-lg h5{
+        color: white;
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+
+    .cards-home-lg p{
+        color: #8F8F8F;
+        font-size: 0.8rem;
     }
 }
 

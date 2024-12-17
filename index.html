@@ -68,7 +68,65 @@
         </nav>
     </header>
     <main>
-        <div class="d-flex justify-content-between align-items-center p-2 pt-5">
+        <div class="mainMenu">
+            <div id="top-main-home" class="pb-2 d-flex justify-content-between">
+                <div class="btn-top-home">
+                    <button class="d-none d-lg-inline-block" type="button">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="d-none d-lg-inline-block ms-2" type="button">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="assets/imgs/main/image-17.jpg" height="100%" />
+                        Mario Rossi
+                    </button>
+                    <ul class="dropdown-menu  dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
+                                <p>Account</p>
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="Javascript:void(0)">Profilo</a></li>
+                        <li>
+                            <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
+                                <p>Effettua l'upgrade a Premium</p>
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="Javascript:void(0)">Impostazioni</a></li>
+                        <hr />
+                        <li><a class="dropdown-item" href="Javascript:void(0)" style="margin: 0">Esci</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-3 d-flex bg-black justify-content-between">
+                <div class="d-flex">
+                    <div class="pt-2 pb-2">
+                        <img src="/assets/imgs/fedez_salmo_viola_cover-jpg-scaled.jpg" style="width: 13em;" />
+                    </div>
+                    <div class="ps-3 pe-5">
+                        <h6 class="text-white">ALBUM</h6>
+                        <h2 class="songTitle">VIOLA (feat. Salmo)</h2>
+                        <p>Fedez, Salmo</p>
+                        <p style="margin-top: 0.5rem">Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                        <div id="btns-carousel" class="d-flex mt-3 align-items-center">
+                            <button id="uno">Play</button>
+                            <button id="due">Salva</button>
+                            <a href="Javascript:void(0)"><i class="bi bi-three-dots text-white fs-3"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end align-items-start">
+                    <button id="nascondi-annunci">NASCONDI ANNUNCI</button>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center p-2 -5">
             <h1 class="text-light ms-2">Buonasera</h1>
             <div class="d-lg-none">
                 <a href="Javascript:void(0)"><i class="bi bi-bell text-light fs-2 me-3"></i></a>
@@ -272,7 +330,8 @@
                 </div>
             </div>
             <div class="d-flex justify-content-evenly text-secondary mx-3 mt-5">
-                <img src="assets/imgs/search/image-1.jpeg" class="rounded-circle" style="width: 3em; height: 3em;">
+                <img src="assets/imgs/Khaby-lame-One-Piece-1200x675.jpg" class="rounded-circle"
+                    style="width: 3em; height: 3em;">
                 <div>
                     <div class="d-flex justify-content-between">
                         <h6 class="m-0">Charlie Hookman</h6>
@@ -282,8 +341,9 @@
                     <p class="fs-6"><i class="bi bi-disc"></i> EP III</p>
                 </div>
             </div>
-            <div class="d-flex justify-content-evenly text-secondary mx-3">
-                <img src="assets/imgs/search/image-1.jpeg" class="rounded-circle" style="width: 3em; height: 3em;">
+            <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
+                <img src="assets/imgs/La-foto-profilo-di-Lil-Baby-vale-150mila-dollari-1024x1017.jpg"
+                    class="rounded-circle" style="width: 3em; height: 3em;">
                 <div>
                     <div class="d-flex justify-content-between">
                         <h6 class="m-0">lightdark02</h6>
@@ -293,8 +353,8 @@
                     <p class="fs-6"><i class="bi bi-disc"></i> Aimed to Kill</p>
                 </div>
             </div>
-            <div class="d-flex justify-content-evenly text-secondary mx-3">
-                <img src="assets/imgs/search/image-1.jpeg" class="rounded-circle" style="width: 3em; height: 3em;">
+            <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
+                <img src="assets/imgs/Immagine.png" class="rounded-circle" style="width: 3em; height: 3em;">
                 <div>
                     <div class="d-flex justify-content-between">
                         <h6 class="m-0">Valeria Traverso</h6>
