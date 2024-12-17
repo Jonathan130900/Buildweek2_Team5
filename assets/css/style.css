@@ -1,11 +1,68 @@
 html,
-body, header{
+body,
+header {
     background-color: #121212;
 }
+
+/* Home css */
 
 .grey {
     background-color: #2C2C2C;
 }
+
+.card {
+    background-color: #242424;
+}
+
+.card p {
+    color: rgb(153, 153, 153);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.card h4 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.bi-heart,
+.bi-heart-fill {
+    color: green;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.bi-three-dots-vertical {
+    color: rgb(153, 153, 153);
+    font-size: 1.7rem;
+}
+
+.bi-three-dots-vertical:hover {
+    color: white;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.play-div {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(26, 26, 26);
+    border-radius: 30px;
+}
+
+.bi-play-fill {
+    color: white;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .albums {
+        display: none;
+    }
+}
+
+/* nav css */
 
 @media screen and (max-width: 576px) {
     .navHome {
@@ -25,108 +82,97 @@ body, header{
     }
 }
 
-.card {
-    background-color: #242424;
+/* album */
+
+.container {
+    color: white;
+    background-color: #121212;
 }
 
-.card p {
-    color: rgb(153, 153, 153);
-    font-size: 0.8rem;
-    margin: 0;
+.albumInfo {
+    text-align: left;
+    width: 100%;
 }
 
-.card h4 {
-    font-weight: 400;
+.d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bandPfp {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.albumYear {
+    color: #8d8d8d;
+}
+
+/* search css */
+
+.custom-input-group {
+    background-color: #3e3e3e;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.input-group-text {
+    padding-left: 12px;
+}
+
+.search-input {
+    background-color: transparent !important;
+    padding-left: 0;
+    color: #ffffff !important;
+}
+
+.search-input::placeholder {
+    color: #ffffff !important;
+    opacity: 0.7;
+}
+
+.search-input:focus {
+    box-shadow: none;
+}
+
+.bi-search {
     font-size: 1.2rem;
 }
 
-.bi-heart,
-.bi-heart-fill {
-    color: green;
-    cursor: pointer;
-    font-size: 2rem;
+.cardSearch {
+    overflow: hidden;
+    border: none;
+    height: 8em;
+    position: relative;
 }
 
-.bi-three-dots-vertical {
-    color: rgb(153, 153, 153);
-    font-size: 1.7rem;
+.card-body {
+    position: relative;
+    padding: 40px;
 }
 
-.bi-three-dots-vertical:hover {
-    color: white;
-    font-size: 1.7rem;
-    cursor: pointer;
-}
-
-.play-div {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(26, 26, 26);
-    border-radius: 30px;
-}
-
-.bi-play-fill {
-    color: white;
-    font-size: 2rem;
-}
-
-@media screen and (min-width: 1200px) {
-    .albums {
-        display: none;
-    }
-}
-
-.card {
-    background-color: #242424;
-}
-
-.card p {
-    color: rgb(153, 153, 153);
-    font-size: 0.8rem;
-    margin: 0;
-}
-
-.card h4 {
-    font-weight: 400;
+.card-title {
     font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
 }
 
-.bi-heart,
-.bi-heart-fill {
-    color: green;
-    cursor: pointer;
-    font-size: 2rem;
-}
-
-.bi-three-dots-vertical {
-    color: rgb(153, 153, 153);
-    font-size: 1.7rem;
-}
-
-.bi-three-dots-vertical:hover {
-    color: white;
-    font-size: 1.7rem;
-    cursor: pointer;
-}
-
-.play-div {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(26, 26, 26);
-    border-radius: 30px;
-}
-
-.bi-play-fill {
-    color: white;
-    font-size: 2rem;
-}
-
-@media screen and (min-width: 1200px) {
-    .albums {
-        display: none;
-    }
+.rotated-img {
+    position: absolute;
+    right: -10%;
+    bottom: 0%;
+    width: 100px;
+    height: 110px;
+    transform: rotate(25deg);
+    border-radius: 8px;
+    box-shadow: 2px #3e3e3e;
 }
 
 #playerSection {
@@ -183,26 +229,4 @@ body, header{
 .marquee {
     display: inline-block;
     min-width: 100%;
-}
-
-.albumInfo {
-    text-align: left;
-    width: 100%;
-}
-
-.d-flex.justify-content-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bandPfp {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.albumYear {
-    color: #8d8d8d;
 }

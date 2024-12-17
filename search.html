@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <header class="bg-dark p-3">
+        <nav class="navHome bg-black bg-opacity-50 pt-2">
+            <a href="index.html" class="text-light text-decoration-none text-center"><i
+                    class="bi bi-house-door fs-2"></i>
+                <p class="fs-6">Home</p>
+            </a>
+            <a href="search.html" class="text-light text-decoration-none text-center"><i
+                    class="bi bi-search fs-2"></i>
+                <p class="fs-6">Cerca</p>
+            </a>
+            <a href="album.html" class="text-light text-decoration-none text-center"><i
+                    class="bi bi-collection fs-2"></i>
+                <p class="fs-6">La tua libreria</p>
+            </a>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-start h1">
+                    <span class="text-light">Cerca</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="searchSection">
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="px-4">
+                        <div class="input-group custom-input-group">
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="bi bi-search text-light"></i>
+                            </span>
+                            <input type="text" class="form-control border-0 search-input"
+                                placeholder="Cosa vuoi ascoltare?" aria-label="Search" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="searchForEverythingSection">
+            <div class="container-fluid mt-4">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h4 class="text-light mb-4">Sfoglia Tutto</h4>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card bg-danger">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Per te</h5>
+                                <img src="assets/imgs/search/image-1.jpeg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Podcast</h5>
+                                <img src="assets/imgs/search/image-2.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Nuove uscite</h5>
+                                <img src="assets/imgs/search/image-3.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card bg-warning">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Pop</h5>
+                                <img src="assets/imgs/search/image-4.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card bg-info">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Hip-Hop</h5>
+                                <img src="assets/imgs/search/image-7.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Rock</h5>
+                                <img src="assets/imgs/search/image-6.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card" style="background-color: pink;">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">Latina</h5>
+                                <img src="assets/imgs/search/image-5.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="cardSearch card" style="background-color: blueviolet;">
+                            <div class="card-body">
+                                <h5 class="card-title text-white" >Classifiche</h5>
+                                <img src="assets/imgs/search/image-8.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col invisible d-lg-none">
+                        <div class="cardSearch card" style="background-color: blueviolet;">
+                            <div class="card-body">
+                                <h5 class="card-title text-white" >Classifiche</h5>
+                                <img src="assets/imgs/search/image-8.jpg" class="rotated-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="playerSection" class="d-lg-none">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center player-container">
+                    <div>
+                        <img src="assets/imgs/main/image-17.jpg" alt="Copertina della canzone"
+                            class="rounded-circle song-cover" />
+                    </div>
+                    <div class="flex-grow-1 d-flex justify-content-center">
+                        <div
+                            class="text-white d-flex justify-content-center align-items-center overflow-hidden song-title-container">
+                            <div class="marquee">
+                                <h6 class="mb-0">
+                                    Titolo canzone molto lungo: artista nome e feat
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-volume-up text-white me-3 player-icon"></i>
+                        <i class="bi bi-heart text-white me-3 player-icon"></i>
+                        <i class="bi bi-play-fill text-white player-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
