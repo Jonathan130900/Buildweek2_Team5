@@ -230,3 +230,54 @@ header {
     display: inline-block;
     min-width: 100%;
 }
+
+.progress-container {
+    width: 60%;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    /* Per rimuovere lo stile di default su Chrome/Safari */
+    /* appearance: none; */
+    height: 8px;
+    background: #ccc;
+    border-radius: 5px;
+    /* outline: none; */
+    cursor:none;
+  }
+  
+  .progress-bar::-webkit-slider-thumb {
+    /* -webkit-appearance: none; */
+    appearance: none ;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: none;
+    border: 2px solid #fff;
+  }
+  
+  .progress-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    /* cursor: pointer; */
+    border: 2px solid #fff;
+  }
+  
+  .play-btn {
+    width: 60px !important;
+    height: 60px;
+ 
+  }
+
+.album-icon {
+    font-size: 30px;
+}
+.bi-play-fill {
+   
+    font-size:30px;
+}
