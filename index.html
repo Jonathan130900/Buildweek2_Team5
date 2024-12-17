@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="d-lg-none">
         <nav class="navHome bg-black bg-opacity-50 pt-2">
             <a href="index.html" class="text-light text-decoration-none text-center"><i
                     class="bi bi-house-door-fill fs-2"></i>
@@ -29,8 +29,107 @@
         </nav>
     </header>
     <main>
-        <div class="d-flex justify-content-between align-items-center p-2 pt-5">
-            <h1 class="text-light ms-2">Buonasera</h1>
+        <div id="top-main-home" class="pb-2 d-flex justify-content-between">
+            <div class="btn-top-home">
+                <button class="d-none d-lg-inline-block" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="d-none d-lg-inline-block" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img src="assets/imgs/main/image-17.jpg" height="100%"/>
+                    Mario Rossi
+                </button>
+                <ul class="dropdown-menu  dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item d-flex justify-content-between" href="#">
+                            <p>Account</p>
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Profilo</a></li>
+                    <li>
+                        <a class="dropdown-item d-flex justify-content-between" href="#">
+                            <p>Effettua l'upgrade a Premium</p>
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                    <hr />
+                    <li><a class="dropdown-item" href="#" style="margin: 0">Esci</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="carouselHome" class="carousel slide d-lg-block">
+            <div class="carousel-inner">
+                <div class="carousel-item active p-3 d-flex justify-content-between">
+                    <div class="pt-2 pb-2">
+                        <img src="/assets/imgs/main/image-14.jpg" height="100%" />
+                    </div>
+                    <div class="ps-3 pe-5">
+                        <h6>ALBUM</h6>
+                        <h2>IEFEHJFE</h2>
+                        <p>Fedez, Salmo</p>
+                        <p style="margin-top: 0.5rem">Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                        <div id="btns-carousel" class="d-flex mt-3 align-items-center">
+                            <button id="uno">Play</button>
+                            <button id="due">Salva</button>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-start">
+                        <button id="nascondi-annunci">NASCONDI ANNUNCI</button>
+                    </div>
+                </div>
+                <div class="carousel-item p-3 d-flex justify-content-between">
+                    <div class="pt-2 pb-2">
+                        <img src="/assets/imgs/main/image-14.jpg" height="100%" />
+                    </div>
+                    <div class="ps-3 pe-5">
+                        <h6>ALBUM</h6>
+                        <h2>EKJNFEKJ</h2>
+                        <p>Fedez, Salmo</p>
+                        <p style="margin-top: 0.5rem">Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                        <div id="btns-carousel" class="d-flex mt-3 align-items-center">
+                            <button id="uno">Play</button>
+                            <button id="due">Salva</button>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-start">
+                        <button id="nascondi-annunci">NASCONDI ANNUNCI</button>
+                    </div>
+                </div>
+                <div class="carousel-item p-3 d-flex justify-content-between">
+                    <div class="pt-2 pb-2">
+                        <img src="/assets/imgs/main/image-14.jpg" height="100%" />
+                    </div>
+                    <div class="ps-3 pe-5">
+                        <h6>ALBUM</h6>
+                        <h2>VIOLA (feat. Salmo)</h2>
+                        <p>Fedez, Salmo</p>
+                        <p style="margin-top: 0.5rem">Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                        <div id="btns-carousel" class="d-flex mt-3 align-items-center">
+                            <button id="uno">Play</button>
+                            <button id="due">Salva</button>
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-start">
+                        <button id="nascondi-annunci">NASCONDI ANNUNCI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center p-2 pt-5 pt-lg-2 pb-lg-0 mt-lg-3">
+            <h1 class="text-light ms-2" id="buonasera">Buonasera</h1>
             <div class="d-lg-none">
                 <a href="Javascript:void(0)"><i class="bi bi-bell text-light fs-2 me-3"></i></a>
                 <a href="Javascript:void(0)"><i class="bi bi-clock-history text-light fs-2 me-3"></i></a>
@@ -43,29 +142,29 @@
             <a href="Javascript:void(0)" class="text-light text-decoration-none fs-5 grey p-2 rounded">Podcast e
                 show</a>
         </div>
-        <div class="row justify-content-evenly pt-3 pb-4">
+        <div class="row justify-content-evenly pt-3 pt-lg-0 pb-4" id="six-cards">
             <div class="col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
-                <img src="assets/imgs/search/image-1.jpeg" class="rounded-start" style="width: 5em; height: 100%;">
+                <img src="assets/imgs/search/image-1.jpeg" class="rounded-start" style="height: 100%;">
                 <p class="ms-2 text-light"></p>
             </div>
             <div class="col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
-                <img src="assets/imgs/search/image-2.jpg" class="rounded-start" style="width: 5em; height: 100%;">
+                <img src="assets/imgs/search/image-2.jpg" class="rounded-start" style="height: 100%;">
                 <p class="ms-2 text-light"></p>
             </div>
             <div class="col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
-                <img src="assets/imgs/search/image-3.jpg" class="rounded-start" style="width: 5em; height: 100%;">
+                <img src="assets/imgs/search/image-3.jpg" class="rounded-start" style="height: 100%;">
                 <p class="ms-2 text-light"></p>
             </div>
             <div class="col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
-                <img src="assets/imgs/search/image-4.jpg" class="rounded-start" style="width: 5em; height: 100%;">
+                <img src="assets/imgs/search/image-4.jpg" class="rounded-start" style="height: 100%;">
                 <p class="ms-2 text-light"></p>
             </div>
             <div class="col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
-                <img src="assets/imgs/search/image-5.jpg" class="rounded-start" style="width: 5em; height: 100%;">
+                <img src="assets/imgs/search/image-5.jpg" class="rounded-start" style="height: 100%;">
                 <p class="ms-2 text-light"></p>
             </div>
             <div class="col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
-                <img src="assets/imgs/search/image-6.jpg" class="rounded-start" style="width: 5em; height: 100%;">
+                <img src="assets/imgs/search/image-6.jpg" class="rounded-start" style="height: 100%;">
                 <p class="ms-2 text-light"></p>
             </div>
         </div>
@@ -218,6 +317,62 @@
                             <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid d-none d-lg-block">
+            <h3 class=" text-light fs-5 mb-4">Altro di ciò che ti piace</h3>
+            <div class="d-lg-flex flex-wrap justify-content-between">
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
+                </div>
+                <div class="cards-home-lg">
+                    <img src="/assets/imgs/main/image-16.jpg" width="100%"/>
+                    <h5>Hot Hits Italia</h5>
+                    <p>Playlist più calda d'Italia</p>
                 </div>
             </div>
         </div>

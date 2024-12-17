@@ -13,3 +13,4 @@ for(let i=0; i<heartIcons.length; i++){
         heartIcons[i].classList.add("bi-heart");
     });
 }
+
