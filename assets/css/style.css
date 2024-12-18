@@ -6,8 +6,174 @@ header {
 
 /* Home css */
 
+#six-cards .col-lg-4{
+    height: 4rem;
+}
+
+@media screen and (max-width: 991px){
+    .dropdown, .forYou{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px){
+    main{
+        width: 65vw;
+        background: linear-gradient(360deg,#0F0F0F,#222222);
+        padding: 1rem;
+    }
+    
+    #six-cards .col-lg-4{
+        width: 30%;
+        height: 4rem;
+    }
+
+    #carouselHome .carousel-item{
+        height: 14rem;
+        background: linear-gradient(10deg, #000000 0%, #1F1F1F 60%);
+    }
+
+    #carouselHome .carousel-item h6, h2, p{
+        color: white;
+        margin: 0;
+    }
+    #carouselHome .carousel-item h6{
+        font-size: 0.6rem;
+    }
+
+    #carouselHome .carousel-item h2{
+        font-size: 3rem;
+        margin-top: 0.7rem;
+        font-weight: bolder;
+    }
+
+    #carouselHome .carousel-item p{
+        font-size: 0.8rem;
+        font-weight: 200;
+    }
+
+    #top-main-home button{
+        background-color: black;
+        border: none;
+        border-radius: 30px;
+        padding-top: 5px;
+    }
+
+    #top-main-home .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 15px;
+      width: 15px;
+      opacity: 50%;
+    }
+
+    #top-main-home .dropdown-toggle{
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 0.2rem;
+    }
+
+    #top-main-home .dropdown-toggle img{
+        border-radius: 30px;
+        margin-right: 0.5rem;
+    }
+
+    #top-main-home .dropdown-menu{
+        background-color: #282828;
+        border: none;
+        width: 15rem;
+    }
+
+    #top-main-home .dropdown-menu a{
+        color: #EAE9E9;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #top-main-home .dropdown-menu a:hover{
+        background-color: #6c6c6c;
+    }
+
+    #top-main-home .dropdown-menu hr{
+        color: #646464;
+        margin: 0;
+        margin-bottom: 0.3rem;
+    }
+
+    #buonasera{
+        font-size: 1.5rem;
+    }
+
+    #btns-carousel button{
+        padding: 0.5rem 1.4rem 0.5rem 1.4rem;
+        border: none;
+        border-radius: 20px;
+        margin-right: 1.5rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    #btns-carousel #uno{
+        background-color: #1CD760;
+    }
+
+    #btns-carousel #uno:hover{
+        color: white;
+    }
+
+    #btns-carousel #due{
+        background-color: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+    }
+
+    #btns-carousel #due:hover{
+        color: #1CD760;
+        border: 1px solid #1CD760;
+    }
+
+    #nascondi-annunci{
+        font-size: 0.7rem;
+        padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+        border-radius: 20px;
+        border: none;
+        background-color: #222222;
+        color: #666666;
+        font-weight: bold;
+    }
+
+    .cards-home-lg{
+        width: 19%;
+        background-color: #171717;
+        margin-bottom: 1.5rem;
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .cards-home-lg img{
+        border-radius: 3px;
+    }
+
+    .cards-home-lg h5{
+        color: white;
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+
+    .cards-home-lg p{
+        color: #8F8F8F;
+        font-size: 0.8rem;
+    }
+
+    .searchContent {
+        margin: 0;
+    }
+}
 .grey {
-    background-color: #2C2C2C;
+  background-color: #2c2c2c;
 }
 
 .card {
@@ -32,15 +198,22 @@ header {
     font-size: 2rem;
 }
 
-.bi-three-dots-vertical {
+.bi-three-dots-vertical, .bi-three-dots{
     color: rgb(153, 153, 153);
     font-size: 1.7rem;
 }
 
-.bi-three-dots-vertical:hover {
+.bi-three-dots{
+    font-size: 1.5rem;
+}
+
+.bi-three-dots-vertical:hover, .bi-three-dots:hover {
     color: white;
-    font-size: 1.7rem;
     cursor: pointer;
+}
+
+.bi-three-dots-vertical:hover{
+    font-size: 1.7rem;
 }
 
 .play-div {
@@ -56,15 +229,16 @@ header {
     font-size: 2rem;
 }
 
-@media screen and (min-width: 1200px) {
-    .albums {
+@media screen and (min-width: 992px) {
+    .albums,
+    .Cerca {
         display: none;
     }
 }
 
 /* nav css */
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
     .navHome {
         position: fixed;
         bottom: 0;
@@ -75,12 +249,267 @@ header {
         align-items: center;
     }
 
+    .navHome2,
+    .sidebar-link,
+    .navHomeRight,
+    .threeDots,
+    .mainMenu,
+    .arrow {
+        display: none;
+    }
+
+    .navHome a i {
+        font-size: 2rem;
+    }
+
     .player {
         position: fixed;
         bottom: 9.5%;
         left: 3%;
     }
 }
+
+@media screen and (min-width: 993px) {
+    .songTitle {
+        font-size: 4em;
+    }
+
+    .tagStart {
+        width: 30%;
+    }
+
+    .navHome {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    .navHome2 {
+        position: fixed;
+        top: 20%;
+        left: 0;
+        width: 20%;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    .navHomeRight {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 15%;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    main {
+        width: 65%;
+        margin-left: 20%;
+        padding-left: 2em;
+        padding-right: 2em;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .navHome a,
+    .navHome2 a {
+        padding: 15px 20px;
+        text-align: left;
+        font-size: 1.2rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .navHome a i,
+    .navHome2 a i {
+        margin-right: 10px;
+        font-size: 1em;
+    }
+
+    .navHome a p,
+    .navHome2 a p {
+        margin-bottom: 0;
+    }
+
+    .sidebar-links {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 70vh;
+        padding: 10px 0;
+    }
+
+    .sidebar-links a {
+        padding: 10px;
+        margin: 5px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .sidebar-links a:hover {
+        background-color: #333;
+    }
+
+    .sidebar-links::-webkit-scrollbar, main::-webkit-scrollbar {
+        width: 1em;
+    }
+
+    .sidebar-links::-webkit-scrollbar-thumb, main::-webkit-scrollbar-thumb {
+        background-color: #888;
+    }
+
+    .sidebar-links::-webkit-scrollbar-thumb:hover, main::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+
+    .sidebar-links::-webkit-scrollbar-track, main::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    #carouselHome .carousel-item{
+        height: 14rem;
+        background: linear-gradient(10deg, #000000 0%, #1F1F1F 60%);
+    }
+
+    #carouselHome .carousel-item h6, h2, p{
+        color: white;
+        margin: 0;
+    }
+    #carouselHome .carousel-item h6{
+        font-size: 0.6rem;
+    }
+
+    #carouselHome .carousel-item h2{
+        font-size: 3rem;
+        margin-top: 0.7rem;
+        font-weight: bolder;
+    }
+
+    #carouselHome .carousel-item p{
+        font-size: 0.8rem;
+        font-weight: 200;
+    }
+
+    #top-main-home button{
+        background-color: black;
+        border: none;
+        border-radius: 30px;
+        padding-top: 5px;
+    }
+
+    #top-main-home .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      height: 15px;
+      width: 15px;
+      opacity: 50%;
+    }
+
+    #top-main-home .dropdown-toggle{
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7rem;
+        font-weight: bold;
+        padding: 0.2rem;
+    }
+
+    #top-main-home .dropdown-toggle img{
+        border-radius: 30px;
+        margin-right: 0.5rem;
+    }
+
+    #top-main-home .dropdown-menu{
+        background-color: #282828;
+        border: none;
+        width: 15rem;
+    }
+
+    #top-main-home .dropdown-menu a{
+        color: #EAE9E9;
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #top-main-home .dropdown-menu a:hover{
+        background-color: #6c6c6c;
+    }
+
+    #top-main-home .dropdown-menu hr{
+        color: #646464;
+        margin: 0;
+        margin-bottom: 0.3rem;
+    }
+
+    #buonasera{
+        font-size: 1.5rem;
+    }
+
+    #btns-carousel button{
+        padding: 0.5rem 1.4rem 0.5rem 1.4rem;
+        border: none;
+        border-radius: 20px;
+        margin-right: 1.5rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    #btns-carousel #uno{
+        background-color: #1CD760;
+    }
+
+    #btns-carousel #uno:hover{
+        color: white;
+    }
+
+    #btns-carousel #due{
+        background-color: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.42);
+    }
+
+    #btns-carousel #due:hover{
+        color: #1CD760;
+        border: 1px solid #1CD760;
+    }
+
+    #nascondi-annunci{
+        font-size: 0.7rem;
+        padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+        border-radius: 20px;
+        border: none;
+        background-color: #222222;
+        color: #666666;
+        font-weight: bold;
+    }
+
+    .cards-home-lg{
+        width: 19%;
+        background-color: #171717;
+        margin-bottom: 1.5rem;
+        padding: 0.8rem;
+        border-radius: 10px;
+    }
+
+    .cards-home-lg img{
+        border-radius: 3px;
+    }
+
+    .cards-home-lg h5{
+        color: white;
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+
+    .cards-home-lg p{
+        color: #8F8F8F;
+        font-size: 0.8rem;
+    }
+}
+
 
 /* album */
 
@@ -229,4 +658,126 @@ header {
 .marquee {
     display: inline-block;
     min-width: 100%;
+}
+
+.progress-container {
+    width: 60%;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    /* Per rimuovere lo stile di default su Chrome/Safari */
+    /* appearance: none; */
+    height: 8px;
+    background: #ccc;
+    border-radius: 5px;
+    /* outline: none; */
+    cursor:none;
+  }
+  
+  .progress-bar::-webkit-slider-thumb {
+    /* -webkit-appearance: none; */
+    appearance: none ;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+  
+  .progress-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    /* cursor: pointer; */
+    border: 2px solid #fff;
+  }
+  
+  .play-btn {
+    width: 60px !important;
+    height: 60px;
+ 
+  }
+
+.album-icon {
+    font-size: 30px;
+}
+.bi-play-fill {
+   
+    font-size:30px;
+}
+
+.icon-hover {
+    transition: color 0.3s ease;
+}
+.icon-hover i:hover {
+    color:green ;
+}
+.icon-hover button i:hover {
+    color:black ;
+}
+
+#desktopPlayerSection {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #282828;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+#desktopPlayerSection .song-cover-desktop {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+#desktopPlayerSection .play-button-circle {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#desktopPlayerSection .play-button-circle i {
+  font-size: 1.5rem;
+}
+
+#desktopPlayerSection .player-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#desktopPlayerSection h6 {
+  font-size: 0.9rem;
+  color: white;
+}
+
+#desktopPlayerSection p {
+  font-size: 0.8rem;
+}
+
+.progress-bar {
+  height: 6px;
+  accent-color: rgb(255, 255, 255);
+  border-radius: 2px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  opacity: 0;
+}
+
+.progress-bar:hover {
+    cursor: pointer;
+}
+
+#shuffleIcon, #playIcon, #repeatIcon  {
+    cursor: pointer;
 }
