@@ -1,11 +1,16 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzViMmQ1ZGQyMjA3MTAwMTVkZTJmMWYiLCJpYXQiOjE3MzQ0Njg0NjEsImV4cCI6MTczNTY3ODA2MX0.Q89cp9cHweU9w5ZWnXYvoPa9mO26MvOv3dP8Qzmkusc";
+
 const searchBar = document.getElementById("searchBar");
 const form = document.getElementById("form");
 const showSong = document.getElementById("showSong");
 const playIcon = document.getElementById("playIcon");
+const progressBar = document.getElementById('songProgressBar');
+
 let currentAudio = null;
 let isPlaying = false;
+let progressInterval;
+let progress = 0;
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -27,7 +32,7 @@ async function searchSong() {
         }
     } catch (error) {
         console.log("Errore: ", error);
-    };
+    }
 }
 
 function printSong(data) {
@@ -60,6 +65,7 @@ function printSong(data) {
             if (currentAudio && !currentAudio.paused) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
+                fermaBarraProgresso();
                 isPlaying = false;
                 playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
             }
@@ -67,20 +73,90 @@ function printSong(data) {
             currentAudio.play();
             isPlaying = true;
             playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
+            avviaBarraProgresso();
         });
     });
 }
 
+// Gestisce il click sul pulsante play/pause
 playIcon.addEventListener("click", function() {
     if (currentAudio) {
         if (isPlaying) {
+            // Se la canzone sta suonando, la mette in pausa
             currentAudio.pause();
             isPlaying = false;
+            fermaBarraProgresso();
             playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
         } else {
+            // Se la canzone è in pausa, la fa ripartire
             currentAudio.play();
             isPlaying = true;
+            avviaBarraProgresso();
             playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
         }
     }
 });
+
+const currentTimeDisplay = document.getElementById('currentTime');
+
+// Funzione per avviare e aggiornare la barra di progresso
+function avviaBarraProgresso() {
+    clearInterval(progressInterval);
+    progressInterval = setInterval(() => {
+        if (currentAudio) {
+            const duration = currentAudio.duration;
+            const currentTime = currentAudio.currentTime;
+            progress = (currentTime / duration) * 100;
+
+            // Controlla se la canzone è finita
+            if (progress >= 100) {
+                // Resetta tutto quando la canzone finisce
+                clearInterval(progressInterval);
+                isPlaying = false;
+                playIcon.innerHTML = '<i class="bi bi-play-fill text-black"></i>';
+                progress = 0;
+                currentTimeDisplay.textContent = '0:00';
+            } else {
+                // Aggiorna la barra di progresso e il tempo visualizzato
+                aggiornaBarraProgresso();
+                aggiornaTempoCorrente(currentTime);
+            }
+        }
+    }, 100); // Aggiorna ogni 100 millisecondi
+}
+
+// Funzione per aggiornare visivamente la barra di progresso
+function aggiornaBarraProgresso() {
+    progressBar.style.width = `${progress}%`;
+    progressBar.setAttribute('aria-valuenow', Math.floor(progress));
+}
+
+// Funzione per aggiornare il tempo corrente visualizzato
+function aggiornaTempoCorrente(currentTime) {
+    const minutes = Math.floor(currentTime / 60);
+    const seconds = Math.floor(currentTime % 60);
+    currentTimeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+}
+
+// Funzione per fermare l'aggiornamento della barra di progresso
+function fermaBarraProgresso() {
+    clearInterval(progressInterval);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const shuffleIcon = document.getElementById('shuffleIcon');
+    const repeatIcon = document.getElementById('repeatIcon');
+
+    function toggleActiveState(element) {
+        element.classList.toggle('active');
+    }
+
+    shuffleIcon.addEventListener('click', function() {
+        toggleActiveState(this);
+    });
+
+    repeatIcon.addEventListener('click', function() {
+        toggleActiveState(this);
+    });
+});
+

@@ -661,7 +661,6 @@ header {
 }
 
 .progress-container {
-    width: 60%;
     max-width: 300px;
     margin: 20px auto;
   }
@@ -764,20 +763,41 @@ header {
   font-size: 0.8rem;
 }
 
-.progress-bar {
+.progress-bar-audio {
   height: 6px;
   accent-color: rgb(255, 255, 255);
   border-radius: 2px;
 }
 
-.progress-bar::-webkit-slider-thumb {
+.progress-bar-audio::-webkit-slider-thumb {
   opacity: 0;
 }
 
-.progress-bar:hover {
+.progress-bar-audio:hover {
     cursor: pointer;
 }
 
 #shuffleIcon, #playIcon, #repeatIcon  {
     cursor: pointer;
 }
+
+.player-icon.active {
+    color: #47df7c !important; 
+}
+
+.progress {
+    height: 4px;
+    background-color: #535353;
+    cursor: pointer;
+}
+  
+.progress-bar {
+    width: 0;
+    background-color: #f5f5f5;
+  }
+  
+
+ 
+ 
+  
+ 
