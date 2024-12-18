@@ -1,25 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const albumCover = document.querySelector("#album-cover");
+/*
+function fetchAlbumData() {
+  const albumId = "YOUR_ALBUM_ID";
+  const apiUrl = `https://api.deezer.com/album/${albumId}`;
 
-  if (albumCover) {
-    albumCover.onload = () => {
-      const vibrant = new Vibrant(albumCover);
-      vibrant
-        .getPalette()
-        .then((palette) => {
-          const dominantColor =
-            palette.Vibrant || palette.Midnight || palette.LightVibrant;
-
-          if (dominantColor) {
-            const gradientBg = document.getElementById("gradient-bg");
-            gradientBg.style.background = `linear-gradient(to bottom, rgba(${dominantColor
-              .getRgb()
-              .join(",")}, 0.5), rgba(18, 18, 18, 1))`;
-          }
-        })
-        .catch((err) => {
-          console.error("Error fetching palette:", err);
-        });
-    };
+  if (sessionStorage.getItem("albumAccessed")) {
+    alert("You have already accessed this album. Reloading the page...");
+    window.location.href = "index.html";
+    return;
   }
-});
+
+  sessionStorage.setItem("albumAccessed", "true");
+
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch album data");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      document.querySelector(".titleAlbum").innerText = data.title;
+      document.querySelector(".bandPfp").src = data.artist.picture_small;
+    })
+    .catch((error) => {
+      console.error("Error fetching album data:", error);
+      alert(
+        "Something went wrong while fetching album data. Please try again later."
+      );
+    });
+}
+
+fetchAlbumData();
+*/
