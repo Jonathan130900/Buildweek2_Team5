@@ -1,9 +1,10 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzViMmQ1ZGQyMjA3MTAwMTVkZTJmMWYiLCJpYXQiOjE3MzQ0Njg0NjEsImV4cCI6MTczNTY3ODA2MX0.Q89cp9cHweU9w5ZWnXYvoPa9mO26MvOv3dP8Qzmkusc";
+const TOKEN = "Bearer YOUR_TOKEN_HERE";
 const searchBar = document.getElementById("searchBar");
 const form = document.getElementById("form");
 const showSong = document.getElementById("showSong");
 const playIcon = document.getElementById("playIcon");
+const mobilePlayIcon = document.getElementById("player-icon2");
 let currentAudio = null;
 let isPlaying = false;
 
@@ -57,18 +58,31 @@ function printSong(data) {
             document.getElementById("songTitle").textContent = songTitle;
             document.getElementById("artistName").textContent = artistName;
             document.getElementById("songCover").src = albumCover;
+            document.querySelector("#playerSection .song-cover").src = albumCover;
+            document.querySelector("#playerSection .song-title-container h6").innerHTML = `${songTitle} - ${artistName}`;
             if (currentAudio && !currentAudio.paused) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
                 isPlaying = false;
-                playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
+                updatePlayIcons();
             }
+
             currentAudio = new Audio(audioUrl);
             currentAudio.play();
             isPlaying = true;
-            playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
+            updatePlayIcons();
         });
     });
+}
+
+function updatePlayIcons() {
+    if (isPlaying) {
+        playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
+        mobilePlayIcon.classList.replace("bi-play-fill", "bi-pause-fill");
+    } else {
+        playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
+        mobilePlayIcon.classList.replace("bi-pause-fill", "bi-play-fill");
+    }
 }
 
 playIcon.addEventListener("click", function() {
@@ -76,11 +90,25 @@ playIcon.addEventListener("click", function() {
         if (isPlaying) {
             currentAudio.pause();
             isPlaying = false;
-            playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
+            updatePlayIcons();
         } else {
             currentAudio.play();
             isPlaying = true;
-            playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
+            updatePlayIcons();
+        }
+    }
+});
+
+mobilePlayIcon.addEventListener("click", function() {
+    if (currentAudio) {
+        if (isPlaying) {
+            currentAudio.pause();
+            isPlaying = false;
+            updatePlayIcons();
+        } else {
+            currentAudio.play();
+            isPlaying = true;
+            updatePlayIcons();
         }
     }
 });
