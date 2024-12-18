@@ -51,3 +51,44 @@ async function randomAlbum(){
     console.log(array);
 }
 
+// Funzione per popolare l'HTML esistente con i dati dell'album
+function displayAlbums(albums) {
+    albums.forEach((album, index) => {
+        // Seleziona l'elemento HTML esistente per ogni album
+        const albumElement = document.getElementById(`album-${index + 1}`); 
+
+        if (albumElement) {
+            // Popola i dettagli dell'album
+            const albumTitle = albumElement.querySelector(".album-title");
+            const albumCover = albumElement.querySelector(".album-cover");
+            const artistName = albumElement.querySelector(".artist-name");
+
+            if (albumTitle) albumTitle.textContent = album.title;
+            if (albumCover) albumCover.src = album.cover_medium;
+            if (albumCover) albumCover.alt = `Copertina di ${album.title}`;
+            if (artistName) artistName.textContent = album.artist.name;
+
+            // Aggiungi un event listener per il click sull'album
+            albumElement.addEventListener("click", () => handleAlbumClick(album));
+        }
+    });
+}
+
+// Funzione per gestire il click su un album
+function handleAlbumClick(album) {
+    const selectedAlbum = {
+        id: album.id,
+        title: album.title,
+        cover: album.cover_medium,
+        artist: album.artist.name,
+        tracks: album.tracks.data.map(track => ({
+            title: track.title,
+        })),
+    };
+
+    // Salva i dati nel sessionStorage
+    sessionStorage.setItem("selectedAlbum", JSON.stringify(selectedAlbum));
+
+    // Naviga verso la pagina album.html
+    window.location.href = "album.html";
+}
