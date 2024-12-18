@@ -1,84 +1,54 @@
 <!DOCTYPE html>
 <html lang="it">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spotify-Search</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-  <header>
-    <nav class="navHome bg-black bg-opacity-50 pt-2">
-      <a href="Javascript:void(0)" class="threeDots text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-three-dots"></i>
-      </a>
-      <a href="index.html" class="text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-house-door-fill"></i>
-        <p class="fs-6">Home</p>
-      </a>
-      <a href="search.html" class="text-light text-decoration-none text-center pb-0"><i class="bi bi-search"></i>
-        <p class="fs-6">Cerca</p>
-      </a>
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center"><i class="bi bi-collection"></i>
-        <p class="fs-6">La tua libreria</p>
-      </a>
-    </nav>
-    <nav class="navHome2 bg-black bg-opacity-50 pt-2">
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-plus-square-fill"></i>
-        <p class="fs-6">Crea Playlist</p>
-      </a>
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-suit-heart-fill"></i>
-        <p class="fs-6">Brani che ti piacciono</p>
-      </a>
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center"><i
-          class="bi bi-bookmark-fill"></i>
-        <p class="fs-6">I tuoi episodi</p>
-      </a>
-      <div class="sidebar-links">
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
-        <a href="Javascript:void(0)" class="text-light text-decoration-none fs-6 p-2">Link</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify-Search</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="p-3">
+      <nav class="navHome bg-black bg-opacity-50 pt-2">
+        <a href="index.html" class="text-light text-decoration-none text-center"
+          ><i class="bi bi-house-door fs-2"></i>
+          <p class="fs-6">Home</p>
+        </a>
+        <a
+          href="search.html"
+          class="text-light text-decoration-none text-center"
+          ><i class="bi bi-search fs-2"></i>
+          <p class="fs-6">Cerca</p>
+        </a>
+        <a href="album.html" class="text-light text-decoration-none text-center"
+          ><i class="bi bi-collection fs-2"></i>
+          <p class="fs-6">La tua libreria</p>
+        </a>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 text-start h1">
+            <span class="text-light">Cerca</span>
+          </div>
+        </div>
       </div>
-    </nav>
-  </header>
-  <main>
-    <div id="top-main-home" class="pb-2 d-flex justify-content-between">
-      <div class="btn-top-home arrow mt-3">
-        <button class="d-none d-lg-inline-block" type="button">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="d-none d-lg-inline-block ms-2" type="button">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div id="searchSection" style="width: 80%;">
+    </header>
+    <main>
+      <div id="searchSection" class="d-lg-none">
         <div class="container-fluid mt-3">
           <div class="row">
             <div class="px-4">
@@ -93,283 +63,285 @@
           </div>
         </div>
       </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="assets/imgs/main/image-17.jpg" height="100%" />
-          Mario Rossi
-        </button>
-        <ul class="dropdown-menu  dropdown-menu-end">
-          <li>
-            <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
-              <p>Account</p>
-              <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </li>
-          <li><a class="dropdown-item" href="Javascript:void(0)">Profilo</a></li>
-          <li>
-            <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
-              <p>Effettua l'upgrade a Premium</p>
-              <i class="bi bi-box-arrow-up-right"></i>
-            </a>
-          </li>
-          <li><a class="dropdown-item" href="Javascript:void(0)">Impostazioni</a></li>
-          <hr />
-          <li><a class="dropdown-item" href="Javascript:void(0)" style="margin: 0">Esci</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="searchForEverythingSection">
-      <div class="container-fluid mt-4">
-        <div class="row">
-          <div class="col-12 text-center text-lg-start">
-            <h4 class="text-light mb-4">Sfoglia Tutto</h4>
-          </div>
-        </div>
-        <div class="row g-4">
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-danger">
-              <div class="card-body">
-                <h5 class="card-title text-white">Per te</h5>
-                <img src="assets/imgs/search/image-1.jpeg" class="rotated-img" />
-              </div>
+      <div id="searchForEverythingSection">
+        <div class="container-fluid mt-4">
+          <div class="row">
+            <div class="col-12 text-center text-lg-start">
+              <h4 class="text-light mb-4">Sfoglia Tutto</h4>
             </div>
           </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-primary">
-              <div class="card-body">
-                <h5 class="card-title text-white">Podcast</h5>
-                <img src="assets/imgs/search/image-2.jpg" class="rotated-img" />
+          <div class="row g-4">
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card bg-danger">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Per te</h5>
+                  <img
+                    src="assets/imgs/search/image-1.jpeg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-success">
-              <div class="card-body">
-                <h5 class="card-title text-white">Nuove uscite</h5>
-                <img src="assets/imgs/search/image-3.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card bg-primary">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Podcast</h5>
+                  <img
+                    src="assets/imgs/search/image-2.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-warning">
-              <div class="card-body">
-                <h5 class="card-title text-white">Pop</h5>
-                <img src="assets/imgs/search/image-4.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card bg-success">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Nuove uscite</h5>
+                  <img
+                    src="assets/imgs/search/image-3.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-info">
-              <div class="card-body">
-                <h5 class="card-title text-white">Hip-Hop</h5>
-                <img src="assets/imgs/search/image-7.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card bg-warning">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Pop</h5>
+                  <img
+                    src="assets/imgs/search/image-4.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-secondary">
-              <div class="card-body">
-                <h5 class="card-title text-white">Rock</h5>
-                <img src="assets/imgs/search/image-6.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card bg-info">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Hip-Hop</h5>
+                  <img
+                    src="assets/imgs/search/image-7.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: pink">
-              <div class="card-body">
-                <h5 class="card-title text-white">Latina</h5>
-                <img src="assets/imgs/search/image-5.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card bg-secondary">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Rock</h5>
+                  <img
+                    src="assets/imgs/search/image-6.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: blueviolet">
-              <div class="card-body">
-                <h5 class="card-title text-white">Classifiche</h5>
-                <img src="assets/imgs/search/image-8.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card" style="background-color: pink">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Latina</h5>
+                  <img
+                    src="assets/imgs/search/image-5.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: goldenrod">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-9.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card" style="background-color: blueviolet">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Classifiche</h5>
+                  <img
+                    src="assets/imgs/search/image-8.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(48, 13, 247)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-10.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+              <div class="cardSearch card" style="background-color: goldenrod">
+                <div class="card-body">
+                  <h5 class="card-title text-white">Musica pop</h5>
+                  <img
+                    src="assets/imgs/search/image-9.jpg"
+                    class="rotated-img"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(206, 174, 105)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-11.jpg" class="rotated-img" />
+            <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(48, 13, 247)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-10.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(158, 99, 192)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-12.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(206, 174, 105)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-11.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(110, 193, 204)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-13.jpeg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(158, 99, 192)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-12.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(125, 202, 142)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-14.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(110, 193, 204)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-13.jpeg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(66, 30, 224)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-15.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(125, 202, 142)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-14.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(66, 209, 228)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-16.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(66, 30, 224)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-15.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(136, 62, 62)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-17.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(66, 209, 228)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-16.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(154, 105, 194)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-18.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(136, 62, 62)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-17.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(218, 32, 187)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-19.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(154, 105, 194)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-18.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(32, 138, 199)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-20.jpg" class="rotated-img" />
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(218, 32, 187)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-19.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <div class="navHomeRight bg-black bg-opacity-50 pt-2">
-      <div class="d-flex justify-content-between align-items-center">
-        <h2 class="h6 text-white ms-4 mt-2">Attività amici</h2>
-        <div class="me-3">
-          <a href="Javascript:void(0)" class="me-1"><i class="bi bi-person-plus-fill text-secondary fs-5"></i></a>
-          <a href="Javascript:void(0)"><i class="bi bi-x-lg text-secondary fs-5"></i></a>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly text-secondary mx-3 mt-5">
-        <img src="assets/imgs/Khaby-lame-One-Piece-1200x675.jpg" class="rounded-circle"
-          style="width: 3em; height: 3em;">
-        <div>
-          <div class="d-flex justify-content-between">
-            <h6 class="m-0">Charlie Hookman</h6>
-            <p class="m-0">4 ore</p>
-          </div>
-          <p class="fs-6 m-0">In Camera • Yumi Zouma</p>
-          <p class="fs-6"><i class="bi bi-disc"></i> EP III</p>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
-        <img src="assets/imgs/La-foto-profilo-di-Lil-Baby-vale-150mila-dollari-1024x1017.jpg" class="rounded-circle"
-          style="width: 3em; height: 3em;">
-        <div>
-          <div class="d-flex justify-content-between">
-            <h6 class="m-0">lightdark02</h6>
-            <p class="m-0">8 ore</p>
-          </div>
-          <p class="fs-6 m-0">Aimed to Kill • Jade LeMac</p>
-          <p class="fs-6"><i class="bi bi-disc"></i> Aimed to Kill</p>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
-        <img src="assets/imgs/Immagine.png" class="rounded-circle" style="width: 3em; height: 3em;">
-        <div>
-          <div class="d-flex justify-content-between">
-            <h6 class="m-0">Valeria Traverso</h6>
-            <p class="m-0">3 giorni</p>
-          </div>
-          <p class="fs-6 m-0">New Kings • Sleeping Wolf</p>
-          <p class="fs-6"><i class="bi bi-music-note-beamed"></i> Twint Badass Mood</p>
-        </div>
-      </div>
-    </div>
-    <div id="playerSection" class="d-lg-none">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-between align-items-center player-container">
-          <div>
-            <img src="assets/imgs/main/image-17.jpg" alt="Copertina della canzone" class="rounded-circle song-cover" />
-          </div>
-          <div class="flex-grow-1 d-flex justify-content-center">
-            <div
-              class="text-white d-flex justify-content-center align-items-center overflow-hidden song-title-container">
-              <div class="marquee">
-                <h6 class="mb-0">
-                  Titolo canzone molto lungo: artista nome e feat
-                </h6>
+              <div class="col-6 col-lg-3">
+                <div class="cardSearch card" style="background-color: rgb(32, 138, 199)">
+                  <div class="card-body">
+                    <h5 class="card-title text-white">Musica pop</h5>
+                    <img
+                      src="assets/imgs/search/image-20.jpg"
+                      class="rotated-img"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center">
-            <i class="bi bi-volume-up text-white me-3 player-icon"></i>
-            <i class="bi bi-heart text-white me-3 player-icon"></i>
-            <i class="bi bi-play-fill text-white player-icon"></i>
           </div>
         </div>
       </div>
-    </div>
-    <div id="desktopPlayerSection" class="d-none d-lg-block">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-3 d-flex align-items-center">
-            <img src="assets/imgs/main/image-17.jpg" alt="Copertina della canzone" class="me-3 song-cover-desktop" />
+    </main>
+    <footer>
+      <div id="playerSection" class="d-lg-none">
+        <div class="container-fluid">
+          <div
+            class="d-flex justify-content-between align-items-center player-container"
+          >
             <div>
-              <h6 class="mb-0">Titolo canzone lungo</h6>
-              <p class="mb-0 text-white-50">Nome artista</p>
+              <img
+                src="assets/imgs/main/image-17.jpg"
+                alt="Copertina della canzone"
+                class="rounded-circle song-cover"
+              />
             </div>
-            <i class="bi bi-heart text-white ms-3 player-icon"></i>
+            <div class="flex-grow-1 d-flex justify-content-center">
+              <div
+                class="text-white d-flex justify-content-center align-items-center overflow-hidden song-title-container"
+              >
+                <div class="marquee">
+                  <h6 class="mb-0">
+                    Titolo canzone molto lungo: artista nome e feat
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <i class="bi bi-volume-up text-white me-3 player-icon"></i>
+              <i class="bi bi-heart text-white me-3 player-icon"></i>
+              <i class="bi bi-play-fill text-white player-icon"></i>
+            </div>
           </div>
+        </div>
+      </div>
+      <div id="desktopPlayerSection" class="d-none d-lg-block">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-3 d-flex align-items-center">
+              <img
+                src="assets/imgs/main/image-17.jpg"
+                alt="Copertina della canzone"
+                class="me-3 song-cover-desktop"
+              />
+              <div>
+                <h6 class="mb-0">Titolo canzone lungo</h6>
+                <p class="mb-0 text-white-50">Nome artista</p>
+              </div>
+              <i class="bi bi-heart text-white ms-3 player-icon"></i>
+            </div>
 
           <div class="col-6 text-center">
             <div class="d-flex justify-content-center align-items-center">
