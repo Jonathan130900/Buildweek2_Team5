@@ -1,5 +1,5 @@
 # Spotify App BW2 - TEAM 5
-This project simulates how a music streaming platform like spotify works on a surface level.
+This project is a clone of the music streaming platform Spotify and simulating some of it's functionalities.
 ***
 ## Home Page
 ### Desktop Screen Size
