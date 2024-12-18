@@ -82,17 +82,17 @@
             </div>
             -->
             <div>
-              <img src="assets/imgs/main/image-11.jpg" alt="album-cover" class="m-5" />
+              <img src="" alt="album-cover" id="album-cover" class="m-5" />
             </div>
           </div>
           <div class="albumInfo d-flex justify-content-center align-items-center mt-4">
             <div class="albumInfo">
               <!--TITOLO ALBUM-->
-              <h2 class="titleAlbum">Titolo Album</h2>
+              <h2 class="titleAlbum" id="album-title"></h2>
               <div class="d-lg-flex align-items-lg-center">
                 <div class="d-flex align-items-center mt-3 mt-lg-0">
                   <img class="bandPfp me-sm-2" src="assets/imgs/main/image-3.jpg" alt="" />
-                  <h6>Nome Gruppo</h6>
+                  <h6 id="artist-name"></h6>
                   <!--IMMAGINE PROFILO GRUPPO-->
                   <!--NOME GRUPPO-->
                 </div>
@@ -107,13 +107,13 @@
       <div class="container">
         <!--ICONE ALBUM E BRANI-->
         <div class="row mt-4 d-flex align-items-center icon-hover  ">
-          <button class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-2 play-btn">
+          <button class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-lg-2 col-sm-2 play-btn">
             <i class="bi bi-play-fill "></i>
           </button>
-          <i class="bi bi-heart text-white col-1 col-lg-auto album-icon m-lg-3 order-lg-2 p-lg-0 order-lg-2"></i>
-          <i class="bi bi-arrow-down-circle album-icon  p-lg-0 m-lg-3 col-lg-auto order-lg-3"></i>
-          <i class="bi bi-three-dots-vertical album-icon col-6  p-lg-0 m-lg-3  order-lg-4"></i>
-          <i class="bi bi-shuffle col-1 d-lg-none album-icon  p-lg-0 order-lg-5"></i>
+          <i class="bi bi-heart text-white col-sm-1 col-lg-auto album-icon m-sm-2 m-lg-3 order-lg-2 p-lg-0 order-lg-2"></i>
+          <i class="bi bi-arrow-down-circle album-icon  p-lg-0 m-lg-3 col-lg-auto col-sm-1 m-sm-2  order-lg-3"></i>
+          <i class="bi bi-three-dots-vertical album-icon col-lg-6 col-sm-6 p-lg-0 m-lg-3 m-sm-1 order-lg-4"></i>
+          <i class="bi bi-shuffle col-sm-1 d-lg-none album-icon  p-lg-0 order-lg-5"></i>
           
         </div>
         <div class="row mt-3 d-sm-none  d-md-inline">
@@ -125,13 +125,13 @@
             </div>
           </div>
         </div>
-        <ol class="text-secondary">
+        <ol class="text-secondary" id="track-list">
           <li>
             <div class="row mt-3">
 
               <div class="col-10 col-lg-6 ps-3 ">
-                <h4 class="mb-0 text-white">titolo</h4>
-                <p class="text-secondary">artista</p>
+                <h4 class="mb-0 text-white " id="album-title"></h4>
+                <p class="text-secondary" id="artist-name"></p>
               </div>
               <div class="col-lg-4 d-sm-none d-md-inline text-center">
                 <p>652.215</p>
@@ -350,6 +350,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
   <script src="assets/js/album.js"></script>
 </body>
 

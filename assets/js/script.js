@@ -61,8 +61,6 @@ async function randomAlbum() {
             console.log("Errore durante la richiesta:", err);
         }
     }
-    console.log(arrAlbums);
+    console.log(array);
 }
-
-
 
