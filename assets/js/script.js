@@ -132,7 +132,7 @@ async function randomArtists() {
                 const data = await result.json();
                 if (data.id && data.nb_album) {
                     console.log("Artist id: ", data.id);
-                    let artist = new Artists(data.name, data.picture_big, data.nb_fan, data.tracklist);
+                    let artist = new Artists(data.name, data.picture_big, data.nb_fan, data.tracklist, data.id);
                     arrArtists.push(artist);
                 } else {
                     i--;
