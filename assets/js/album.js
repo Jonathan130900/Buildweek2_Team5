@@ -18,7 +18,6 @@ function populateAlbumDetails(album) {
     const albumTitle = document.getElementById("album-title");
     const albumCover = document.getElementById("album-cover");
     const artistName = document.getElementById("artist-name");
-
     // Imposta i dettagli del primo album
     if (albumTitle) albumTitle.textContent = album.title;
     if (albumCover) {
@@ -42,9 +41,9 @@ function populateAlbumDetails(album) {
     //Popola la lista delle tracce
     if (trackListDiv && album.tracks[0]) {
         const trackList = document.getElementById("track-list");
-        
+
         album.tracks.forEach((track) => {
-            const min = Math.floor(track.duration / 60); 
+            const min = Math.floor(track.duration / 60);
             const seconds = track.duration % 60;
             const durata = `${min}:${seconds}`;
 
@@ -52,8 +51,10 @@ function populateAlbumDetails(album) {
                 <li>
                     <div class="row mt-3">
                         <div class="col-10 col-lg-6 ps-3">
+                            <a href="Javascript:void(0)" class="text-decoration-none songLink" data-song="${track.preview}">
                             <h4 class="mb-0 mt-0 text-white " id="track-list">${track.title}</h4>
                             <p class="text-secondary" id="artist-name">${track.artist}</p>
+                            </a>
                         </div>
                     <div class="col-lg-4 d-sm-none d-md-inline text-center">
                         <p class="mt-0">${track.rank}</p>
@@ -66,6 +67,42 @@ function populateAlbumDetails(album) {
                     </div>
                 </li>
         `;
+        });
+        const songLinks = document.querySelectorAll('.songLink');
+        songLinks.forEach(songLink => {
+            songLink.addEventListener('click', function () {
+                const audioUrl = songLink.getAttribute('data-song');
+                const songTitle = songLink.nextElementChild.querySelector('h4').textContent;
+                const artistName = songLink.nextElementChild.querySelector('p').textContent;
+                const albumCover = album.cover;
+                console.log(albumCover);
+                
+
+                document.getElementById("songTitle").textContent = songTitle;
+                document.getElementById("artistName").textContent = artistName;
+                document.getElementById("songCover").src = albumCover;
+                document.querySelector("#playerSection .song-cover").src = albumCover;
+                document.querySelector("#playerSection .song-title-container h6").innerHTML = `${songTitle} - ${artistName}`;
+
+                if (currentAudio && !currentAudio.paused) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    isPlaying = false;
+                    updatePlayIcons();
+                }
+
+                currentAudio = new Audio(audioUrl);
+                currentAudio.play();
+                isPlaying = true;
+                updatePlayIcons();
+                currentSongIndex = Array.from(songImages).indexOf(img);
+                updateProgress();
+                currentAudio.ontimeupdate = updateProgress;
+                currentAudio.onloadedmetadata = function () {
+                    durationDisplay.textContent = formatTime(currentAudio.duration);
+                    songProgress.max = currentAudio.duration;
+                };
+            });
         });
     } else if (trackListDiv) {
         trackListDiv.innerHTML = "";
