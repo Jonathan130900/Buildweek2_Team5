@@ -9,7 +9,7 @@ let currentAudio = null;
 let isPlaying = false;
 let songList = [];
 let currentSongIndex = 0;
-const volumeBar = document.querySelector(".progress-bar");
+const volumeBar = document.querySelector(".volume-bar");
 
 volumeBar.addEventListener("input", function() {
     if (currentAudio) {
