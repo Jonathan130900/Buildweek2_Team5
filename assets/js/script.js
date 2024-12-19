@@ -194,3 +194,5 @@ function handleAlbumClick(album) {
     // Naviga verso la pagina album.html
     window.location.href = "album.html";
 }
+
+
