@@ -261,7 +261,7 @@ function printCards() {
 
 function listenersBtn() {
     for (let i = 0; i < 6; i++) {
-        cards[i].addEventListener("click", () => handleArtistClick(arrArtists[i]));
+        cards[i].addEventListener("click", () => handleArtistClick(arrArtists[i], arrTracks[i]));
     }
     for (let i = 6; i < 11; i++) {
         cards[i].addEventListener("click", () => handleAlbumClick(arrAlbums[i - 6]));
@@ -281,9 +281,10 @@ function handleAlbumClick(album) {
     window.location.href = "album.html";
 }
 
-function handleArtistClick(artist) {
+function handleArtistClick(artist, tracks) {
     // Salva i dati nel sessionStorage
     sessionStorage.setItem("selectedArtist", JSON.stringify(artist));
+    sessionStorage.setItem("selectedArtistTracks", JSON.stringify(tracks));
 
     // Naviga verso la pagina album.html
     window.location.href = "artist.html";
