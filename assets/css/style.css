@@ -854,3 +854,15 @@ header {
 #repeatIcon {
     cursor: pointer;
 }
+
+
+
+.img-bg {
+    width:60% ;
+    height: 250px ;
+}
+
+.name-artist {
+    font-size: 3rem ;
+    font-weight: 800;
+}
