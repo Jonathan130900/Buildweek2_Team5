@@ -70,7 +70,7 @@
             </div>
         </nav>
     </header>
-    <main class="bg-black text-white">
+    <main id="artistMain" class="bg-black text-white">
 
         <figure class="position-relative  vw-100 m-0 p-0">
             <img src="assets/imgs/main/image-19.jpg" class=" img-bg " style="object-fit: cover;" alt="Background Image">
@@ -97,30 +97,125 @@
                 <i class="bi bi-three-dots-vertical album-icon col-lg-6 col-sm-6 p-lg-0 m-lg-3 m-sm-1 order-lg-4"></i>
 
             </div>
-          <h2>Popolari</h2>
-            <ol class="text-secondary" id="track-list">
-                <li>
-                    <div class="row col-8 mt-3">
+            <div class="infoContainer d-flex">
+                <div id="artist-top5">
+                    <h3>Popolari</h3>
+                    <div class="mt-4 gap-1">
+                        <ol class="text-secondary" id="artist-track-list">
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
 
-                        <div class="col-10 col-lg-6 ps-3 ">
-                            <img src="assets/imgs/main/image-17.jpg " class="img-thumbnail w-25" alt=""> <span>titolo</span>
-                            <p class="text-secondary" id="artist-name"></p>
-                        </div>
-                        <div class=" text-center">
-                            <p>652.215</p>
-                        </div>
-                        <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
-                            <p>2.20</p>
-                        </div>
-                       <div>
-                         <p>wf</p>
-                       </div>
-                      
+                        </ol>
+                        
                     </div>
-                </li>
+                </div>
+                <div id="liked-songs" class="align-top">
+                    <h3>Brani che ti piacciono</h3>
+                    <div class="d-flex mt-4">
+                        <img src="assets/imgs/main/image-6.jpg" class="rounded-circle">
+                        <div class="ms-3">
+                            <p class="fw-bold">Hai messo mi piace a 11 brani</p>
+                            <p>Di Yellowcard</p>
+                        </div>
 
-            </ol>
-            <div style="height: 10em;" class="d-lg-none"></div>
+                    </div>
+                </div>
+        
+            </div>  
+  
+          <div style="height: 10em;" class="d-lg-none"></div>
+          <div>
+          </div>
+        </div>
+        <div class="invisible d-none d-lg-block" style="height: 5em">
         </div>
     </main>
     <footer>

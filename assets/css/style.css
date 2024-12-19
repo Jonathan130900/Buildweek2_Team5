@@ -823,14 +823,37 @@ header {
   cursor: pointer;
 }
 
+/* pagina artist */
 
+#artistMain {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
 .img-bg {
-    width:60% ;
-    height: 250px ;
+  width: 60%;
+  height: 250px;
 }
 
 .name-artist {
-    font-size: 3rem ;
-    font-weight: 800;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+#artist-top5 {
+  width: 60%;
+}
+
+#artist-top5 img {
+  width: 50px;
+  height: 50px;
+}
+
+#liked-songs {
+  width: 40%;
+}
+
+#liked-songs img {
+  width: 75px;
+  height: 75px;
 }
