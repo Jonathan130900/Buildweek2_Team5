@@ -10,6 +10,9 @@ let isPlaying = false;
 let songList = [];
 let currentSongIndex = 0;
 const volumeBar = document.querySelector(".volume-bar");
+const progressBar = document.getElementById('songProgressBar');
+const playIconMobile = document.getElementById("playIconMobile");
+const progressBarMobile = document.getElementById('songProgressBarMobile');
 
 volumeBar.addEventListener("input", function() {
     if (currentAudio) {
@@ -161,13 +164,65 @@ function playSongAtIndex(index) {
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
+        fermaBarraProgresso();
     }
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
     isPlaying = true;
     updatePlayIcons();
+    avviaBarraProgresso();
 }
 
 document.querySelector('.bi-skip-start-fill').addEventListener("click", prevSong);
 document.querySelector('.bi-skip-end-fill').addEventListener("click", nextSong);
+
+
+
+// Funzione per aggiornare la barra di progresso (sia desktop che mobile)
+function avviaBarraProgresso() {
+    progressInterval = setInterval(() => {
+        if (currentAudio && !currentAudio.paused) {
+            progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+            updateProgressBar();
+        }
+    }, 100);
+    avviaBarraProgressoMobile(); // Avvia anche la barra di progresso mobile
+}
+
+// Funzione per aggiornare la barra di progresso
+function updateProgressBar() {
+    progressBar.style.width = `${progress}%`;
+    progressBarMobile.style.width = `${progress}%`;
+    updateCurrentTime(currentAudio.currentTime); // Aggiorna il tempo su entrambi i lettori
+}
+
+// Funzione per aggiornare il tempo
+function updateCurrentTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+    const timeString = `${minutes}:${seconds}`;
+    document.getElementById("currentTime").textContent = timeString;
+    document.getElementById("currentTimeMobile").textContent = timeString;
+}
+
+// Funzione per fermare la barra di progresso
+function fermaBarraProgresso() {
+    clearInterval(progressInterval);
+    progressInterval = null; // Non fermiamo il progresso completamente
+    // La barra di progresso non torna più indietro
+}
+
+// Funzione per la barra di progresso mobile
+function avviaBarraProgressoMobile() {
+    mobileProgressInterval = setInterval(() => {
+        if (currentAudio && !currentAudio.paused) {
+            progress += (100 / currentAudio.duration) * 0.1; // Aggiorna la progressione
+            if (progress >= 100) {
+                clearInterval(mobileProgressInterval);
+                progress = 100;
+            }
+            progressBarMobile.style.width = `${progress}%`;
+        }
+    }, 100);
+}
