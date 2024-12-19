@@ -4,9 +4,9 @@
 const albumData = JSON.parse(sessionStorage.getItem("selectedAlbum"));
 
 if (albumData) {
-    populateAlbumDetails(albumData); // Popola i dettagli dell'album
+  populateAlbumDetails(albumData); // Popola i dettagli dell'album
 } else {
-    console.error("Dati dell'album non trovati nel sessionStorage.");
+  console.error("Dati dell'album non trovati nel sessionStorage.");
 }
 
 // Funzione per popolare i dettagli dell'album
