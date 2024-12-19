@@ -6,10 +6,13 @@ const form = document.getElementById("form");
 const showSong = document.getElementById("showSong");
 const playIcon = document.getElementById("playIcon");
 const progressBar = document.getElementById('songProgressBar');
+const playIconMobile = document.getElementById("playIconMobile");
+const progressBarMobile = document.getElementById('songProgressBarMobile');
 
 let currentAudio = null;
 let isPlaying = false;
-let progressInterval;
+let progressInterval = null;
+let mobileProgressInterval = null;
 let progress = 0;
 
 form.addEventListener("submit", function (e) {
@@ -52,6 +55,7 @@ function printSong(data) {
                 </div>
             </div>`;
     }
+
     const songImages = document.querySelectorAll('.tagStart img');
     songImages.forEach(img => {
         img.addEventListener('click', function() {
@@ -59,89 +63,109 @@ function printSong(data) {
             const songTitle = img.nextElementSibling.querySelector('h4').textContent;
             const artistName = img.nextElementSibling.querySelector('p').textContent;
             const albumCover = img.src;
+
+            // Update desktop player
             document.getElementById("songTitle").textContent = songTitle;
             document.getElementById("artistName").textContent = artistName;
             document.getElementById("songCover").src = albumCover;
+
+            // Update mobile player
+            document.getElementById("songTitleMobile").textContent = `${songTitle} - ${artistName}`;
+            document.getElementById("songCoverMobile").src = albumCover;
+
             if (currentAudio && !currentAudio.paused) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
                 fermaBarraProgresso();
                 isPlaying = false;
                 playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
+                playIconMobile.classList.replace("bi-pause-fill", "bi-play-fill");
             }
+
             currentAudio = new Audio(audioUrl);
             currentAudio.play();
             isPlaying = true;
             playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
-            avviaBarraProgresso();
+            playIconMobile.classList.replace("bi-play-fill", "bi-pause-fill");
+            avviaBarraProgresso(); // Avvia la barra di progresso
         });
     });
 }
 
-// Gestisce il click sul pulsante play/pause
-playIcon.addEventListener("click", function() {
+// Funzione per gestire il play/pause
+function togglePlayPause() {
     if (currentAudio) {
         if (isPlaying) {
-            // Se la canzone sta suonando, la mette in pausa
             currentAudio.pause();
             isPlaying = false;
-            fermaBarraProgresso();
             playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
+            playIconMobile.classList.replace("bi-pause-fill", "bi-play-fill");
         } else {
-            // Se la canzone è in pausa, la fa ripartire
             currentAudio.play();
             isPlaying = true;
-            avviaBarraProgresso();
             playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
+            playIconMobile.classList.replace("bi-play-fill", "bi-pause-fill");
         }
     }
-});
+}
 
-const currentTimeDisplay = document.getElementById('currentTime');
-
-// Funzione per avviare e aggiornare la barra di progresso
+// Funzione per aggiornare la barra di progresso (sia desktop che mobile)
 function avviaBarraProgresso() {
-    clearInterval(progressInterval);
     progressInterval = setInterval(() => {
-        if (currentAudio) {
-            const duration = currentAudio.duration;
-            const currentTime = currentAudio.currentTime;
-            progress = (currentTime / duration) * 100;
-
-            // Controlla se la canzone è finita
-            if (progress >= 100) {
-                // Resetta tutto quando la canzone finisce
-                clearInterval(progressInterval);
-                isPlaying = false;
-                playIcon.innerHTML = '<i class="bi bi-play-fill text-black"></i>';
-                progress = 0;
-                currentTimeDisplay.textContent = '0:00';
-            } else {
-                // Aggiorna la barra di progresso e il tempo visualizzato
-                aggiornaBarraProgresso();
-                aggiornaTempoCorrente(currentTime);
-            }
+        if (currentAudio && !currentAudio.paused) {
+            progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+            updateProgressBar();
         }
-    }, 100); // Aggiorna ogni 100 millisecondi
+    }, 100);
+    avviaBarraProgressoMobile(); // Avvia anche la barra di progresso mobile
 }
 
-// Funzione per aggiornare visivamente la barra di progresso
-function aggiornaBarraProgresso() {
+// Funzione per aggiornare la barra di progresso
+function updateProgressBar() {
     progressBar.style.width = `${progress}%`;
-    progressBar.setAttribute('aria-valuenow', Math.floor(progress));
+    progressBarMobile.style.width = `${progress}%`;
+    updateCurrentTime(currentAudio.currentTime); // Aggiorna il tempo su entrambi i lettori
 }
 
-// Funzione per aggiornare il tempo corrente visualizzato
-function aggiornaTempoCorrente(currentTime) {
-    const minutes = Math.floor(currentTime / 60);
-    const seconds = Math.floor(currentTime % 60);
-    currentTimeDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+// Funzione per aggiornare il tempo
+function updateCurrentTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+    const timeString = `${minutes}:${seconds}`;
+    document.getElementById("currentTime").textContent = timeString;
+    document.getElementById("currentTimeMobile").textContent = timeString;
 }
 
-// Funzione per fermare l'aggiornamento della barra di progresso
+// Funzione per fermare la barra di progresso
 function fermaBarraProgresso() {
     clearInterval(progressInterval);
+    progressInterval = null; // Non fermiamo il progresso completamente
+    // La barra di progresso non torna più indietro
 }
+
+// Funzione per la barra di progresso mobile
+function avviaBarraProgressoMobile() {
+    mobileProgressInterval = setInterval(() => {
+        if (currentAudio && !currentAudio.paused) {
+            progress += (100 / currentAudio.duration) * 0.1; // Aggiorna la progressione
+            if (progress >= 100) {
+                clearInterval(mobileProgressInterval);
+                progress = 100;
+            }
+            progressBarMobile.style.width = `${progress}%`;
+        }
+    }, 100);
+}
+
+// Funzione per fermare la barra di progresso mobile
+function fermaBarraProgressoMobile() {
+    clearInterval(mobileProgressInterval);
+    mobileProgressInterval = null; // Non fermiamo il progresso completamente
+}
+
+// Event listener per i pulsanti di play/pause
+playIcon.addEventListener("click", togglePlayPause);
+playIconMobile.addEventListener("click", togglePlayPause);
 
 document.addEventListener('DOMContentLoaded', function() {
     const shuffleIcon = document.getElementById('shuffleIcon');
@@ -159,4 +183,3 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleActiveState(this);
     });
 });
-
