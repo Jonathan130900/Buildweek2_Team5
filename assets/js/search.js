@@ -4,10 +4,6 @@ const searchBar = document.getElementById("searchBar");
 const form = document.getElementById("form");
 const showSong = document.getElementById("showSong");
 const playIcon = document.getElementById("playIcon");
-const progressBar = document.getElementById('songProgressBar');
-const playIconMobile = document.getElementById("playIconMobile");
-const progressBarMobile = document.getElementById('songProgressBarMobile');
-
 const mobilePlayIcon = document.getElementById("player-icon2");
 let currentAudio = null;
 let isPlaying = false;
@@ -83,9 +79,8 @@ function printSong(data) {
             if (currentAudio && !currentAudio.paused) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
-                fermaBarraProgresso();
                 isPlaying = false;
-                playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
+                updatePlayIcons();
             }
 
             currentAudio = new Audio(audioUrl);
