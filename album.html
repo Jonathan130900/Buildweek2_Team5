@@ -103,23 +103,27 @@
               <i class="fa-solid fa-circle-chevron-right"></i>
             </div>
             -->
+          <div class="btn-top-home">
+
+          </div>
           <div>
-            <img src="assets/imgs/main/image-11.jpg" alt="album-cover" class="m-5" />
+
+            <img src="" alt="album-cover" id="album-cover" class="m-5" />
           </div>
         </div>
         <div class="albumInfo d-flex justify-content-center align-items-center mt-4">
           <div class="albumInfo">
             <!--TITOLO ALBUM-->
-            <h2 class="titleAlbum">Titolo Album</h2>
+            <h2 class="titleAlbum " id="album-title-2"></h2>
             <div class="d-lg-flex align-items-lg-center">
               <div class="d-flex align-items-center mt-3 mt-lg-0">
-                <img class="bandPfp me-sm-2" src="assets/imgs/main/image-3.jpg" alt="" />
-                <h6>Nome Gruppo</h6>
+                <img class="bandPfp me-sm-2" id="album-cover-2" src="" alt="" />
+                <h6 id="artist-name-2"></h6>
                 <!--IMMAGINE PROFILO GRUPPO-->
                 <!--NOME GRUPPO-->
               </div>
               <div class="albumYear d-flex d-lg-inline-flex justify-content-lg-center">
-                <p>Album &#x2022; 2017</p>
+
                 <!--DATA-->
               </div>
             </div>
@@ -130,7 +134,7 @@
         <!--ICONE ALBUM E BRANI-->
         <div class="row mt-4 d-flex align-items-center icon-hover  ">
           <button
-            class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-2 play-btn">
+            class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-lg-2 col-sm-2 play-btn">
             <i class="bi bi-play-fill "></i>
           </button>
           <i class="bi bi-heart text-white col-1 col-lg-auto album-icon m-lg-3 order-lg-2 p-lg-0 order-lg-2"></i>
@@ -140,7 +144,7 @@
 
         </div>
         <div class="row mt-3 d-sm-none  d-md-inline">
-          <div class="row border-bottom border-secondary ms-1 mb-5">
+          <div class="row border-bottom border-secondary ms-1">
             <div class=" col-7 col-lg-6 ms-3  mb-3"> <span>#TITOLO</span> </div>
             <div class="col-4 text-center"> <span> RIPRODIZIONI </span> </div>
             <div class="col-1 text-center">
@@ -148,27 +152,12 @@
             </div>
           </div>
         </div>
-        <ol class="text-secondary" id="track-list">
-          <li>
-            <div class="row mt-3">
-
-              <div class="col-10 col-lg-6 ps-3 ">
-                <h4 class="mb-0 text-white " id="album-title"></h4>
-                <p class="text-secondary" id="artist-name"></p>
-              </div>
-              <div class="col-lg-4 d-sm-none d-md-inline text-center">
-                <p>652.215</p>
-              </div>
-              <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
-                <p>2.20</p>
-              </div>
-              <div class="d-lg-none  col-1">
-                <i class="bi bi-three-dots-vertical "></i>
-              </div>
-          </li>
+        <div id="track-list-div">
+          <ol class="text-secondary" id="track-list"></ol>
+        </div>
       </div>
-      </ol>
-      <div style="height: 10em;" class="d-lg-none"></div>
+
+      <div style="height: 10em;" class="d-none d-lg-block"></div>
   </main>
   <footer>
     <div class="navHomeRight bg-black bg-opacity-50 pt-2">
@@ -284,5 +273,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
   <script src="assets/js/album.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/color-thief@2.3.0/dist/color-thief.min.js"></script>
+
 </body>
 </html>
