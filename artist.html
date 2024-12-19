@@ -72,19 +72,21 @@
     </header>
     <main id="artistMain" class="bg-black text-white">
 
-        <figure class="position-relative  vw-100 m-0 p-0">
-            <img src="assets/imgs/main/image-19.jpg" class=" img-bg " style="object-fit: cover;" alt="Background Image">
-            <figcaption class="position-absolute top-50 start-40 translate-middle-y text-white ps-3 ">
-                <div clas>
-                    <i class="bi bi-patch-check-fill  "  > Artista verificato</i>
-                    <h1 class="name-artist pt-0"> GRDGDRG</h1>
-                    <p>4.321.357 AScoltatori mensili</p>
+        <section class="hero position-relative m-0 p-0" style="width: 100%; height: 30%;">
+            <img src="assets/imgs/main/image-19.jpg" class="hero-img img-fluid w-100 h-100" style="object-fit: cover;" alt="Background Image">
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+            <div class="hero-content position-absolute top-50 start-0 translate-middle-y text-white px-4" style="left: 5%;">
+                <div class="verified mb-2">
+                    <i class="bi bi-patch-check-fill me-2"></i>
+                    <span>Artista verificato</span>
                 </div>
-            </figcaption>
-        </figure>
-
-
-        <div class="container">
+                <h1 class="name-artist pt-0">GRDGDRG</h1>
+                <p>4.321.357 Ascoltatori mensili</p>
+            </div>
+        </section>
+        
+        
+        <div class="container mb-5">
             <!--ICONE ALBUM E BRANI-->
             <div class="row mt-4 d-flex align-items-center icon-hover  ">
                 <button
@@ -215,6 +217,44 @@
           <div>
           </div>
         </div>
+        <div>
+            <h3>Discography</h3>
+            <div class="row mt-4 gx-3 gy-3">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card text-center bg-dark text-white">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="card-img-top" alt="Album Cover">
+                        <div class="card-body mb-3">
+                            <h5 class="card-title">Album Title</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card text-center bg-dark text-white">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="card-img-top" alt="Album Cover">
+                        <div class="card-body mb-3">
+                            <h5 class="card-title">Album Title</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card text-center bg-dark text-white">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="card-img-top" alt="Album Cover">
+                        <div class="card-body mb-3">
+                            <h5 class="card-title">Album Title</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card text-center bg-dark text-white">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="card-img-top" alt="Album Cover">
+                        <div class="card-body mb-3">
+                            <h5 class="card-title">Album Title</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="invisible d-none d-lg-block" style="height: 5em">
         </div>
     </main>
