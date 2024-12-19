@@ -11,6 +11,7 @@ let songList = [];
 let currentSongIndex = 0;
 const volumeBar = document.querySelector(".volume-bar");
 const songProgress = document.getElementById("songProgress");
+const songProgressMobile = document.getElementById("songProgressMobile");
 const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 
