@@ -69,14 +69,15 @@ function populateAlbumDetails(album) {
                             </a>
                             <p class="text-secondary" id="artist-name">${track.artist}</p>
                         </div>
-                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                        <div class="col-lg-4 d-sm-none d-md-inline text-center">
                         <p class="mt-0">${track.rank}</p>
-                    </div>
-                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                        </div>
+                        <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
                         <p class="mt-0">${durata}</p>
-                    </div>
-                    <div class="d-lg-none  col-1">
+                        </div>
+                        <div class="d-lg-none  col-1">
                         <i class="bi bi-three-dots-vertical "></i>
+                        </div>
                     </div>
                 </li>
             `;
