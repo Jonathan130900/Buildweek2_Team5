@@ -72,10 +72,10 @@
     </header>
     <main id="artistMain" class="bg-black text-white">
 
-        <section class="hero position-relative m-0 p-0" style="width: 100%; height: 30%;">
+        <section class="hero position-relative m-0 p-0">
             <img src="assets/imgs/main/image-19.jpg" class="hero-img img-fluid w-100 h-100" style="object-fit: cover;" alt="Background Image">
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
-            <div class="hero-content position-absolute top-50 start-0 translate-middle-y text-white px-4" style="left: 5%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
                 <div class="verified mb-2">
                     <i class="bi bi-patch-check-fill me-2"></i>
                     <span>Artista verificato</span>
@@ -88,18 +88,30 @@
         
         <div class="container mb-5">
             <!--ICONE ALBUM E BRANI-->
-            <div class="row mt-4 d-flex align-items-center icon-hover  ">
-                <button
-                    class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-lg-2 col-sm-2 play-btn">
-                    <i class="bi bi-play-fill "></i>
-                </button>
-                <button class="btn border-white w-25 text-white">FOLLOWING</button>
+            <div class="row icon-hover">
+                <div class="my-4 d-flex align-items-center ">
+                    <button
+                        class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-lg-2 col-sm-2 play-btn">
+                        <i class="bi bi-play-fill "></i>
+                    </button>
+                    <button class="btn border-white w-25 text-white">FOLLOWING</button>
 
 
-                <i class="bi bi-three-dots-vertical album-icon col-lg-6 col-sm-6 p-lg-0 m-lg-3 m-sm-1 order-lg-4"></i>
-
+                    <i class="bi bi-three-dots-vertical album-icon col-lg-6 col-sm-6 p-lg-0 m-lg-3 m-sm-1 order-lg-4"></i>
+                </div>
             </div>
-            <div class="infoContainer d-flex">
+            <div class="infoContainer d-lg-none">
+                <div id="liked-songs">
+                    <h3>Brani che ti piacciono</h3>
+                    <div class="d-flex mt-4">
+                        <img src="assets/imgs/main/image-6.jpg" class="rounded-circle">
+                        <div class="ms-3">
+                            <p class="fw-bold">Hai messo mi piace a 11 brani</p>
+                            <p>Di Yellowcard</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div id="artist-top5">
                     <h3>Popolari</h3>
                     <div class="mt-4 gap-1">
@@ -194,12 +206,112 @@
                                     </div>
                                 </div>
                             </li>
-
                         </ol>
-                        
                     </div>
                 </div>
-                <div id="liked-songs" class="align-top">
+
+            </div>
+
+            <div class="infoContainer d-lg-flex d-sm-none">            
+                <div id="artist-top5">
+                    <h3>Popolari</h3>
+                    <div class="mt-4 gap-1">
+                        <ol class="text-secondary" id="artist-track-list">
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="row mt-2 d-flex align-items-center">
+                                    <div class="col-10 col-lg-6 ps-3">
+                                        <h4 class="mb-0 text-white" id="album-title"></h4>
+                                        <p class="text-secondary" id="artist-name"></p>
+                                        <img src="assets/imgs/main/image-1.jpg">
+                                    </div>
+                                    <div class="col-lg-4 d-sm-none d-md-inline text-center">
+                                        <p>652.215</p>
+                                    </div>
+                                    <div class="col-lg-1 d-sm-none ms-2 d-md-inline text-center">
+                                        <p>2.20</p>
+                                    </div>
+                                    <div class="d-lg-none col-1">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Repeat the list items as needed -->
+                        </ol>
+                    </div>
+                </div>
+                <div id="liked-songs">
                     <h3>Brani che ti piacciono</h3>
                     <div class="d-flex mt-4">
                         <img src="assets/imgs/main/image-6.jpg" class="rounded-circle">
@@ -207,12 +319,12 @@
                             <p class="fw-bold">Hai messo mi piace a 11 brani</p>
                             <p>Di Yellowcard</p>
                         </div>
-
                     </div>
                 </div>
-        
-            </div>  
-  
+
+            </div>
+
+              
           <div style="height: 10em;" class="d-lg-none"></div>
           <div>
           </div>

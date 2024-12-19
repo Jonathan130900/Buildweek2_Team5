@@ -839,9 +839,10 @@ header {
   font-size: 3rem;
   font-weight: 800;
 }
-
-#artist-top5 {
-  width: 60%;
+@media screen and (min-width: 991px) {
+  #artist-top5 {
+    width: 60%;
+  }
 }
 
 #artist-top5 img {
@@ -849,11 +850,101 @@ header {
   height: 50px;
 }
 
-#liked-songs {
-  width: 40%;
+@media screen and (min-width: 991px) {
+  #liked-songs {
+    width: 40%;
+  }
 }
 
 #liked-songs img {
   width: 75px;
   height: 75px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+
+.hero-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 90%;
+  padding: 0 1rem;
+}
+
+.verified {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.verified i {
+  margin-right: 0.5rem;
+}
+
+.name-artist {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 991px) {
+  .hero {
+    height: 30%;
+  }
+
+  .name-artist {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    height: 35vh;
+  }
+
+  .hero-content {
+    left: 3%;
+    top: 60%;
+    transform: translateY(0);
+  }
+
+  .name-artist {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .verified {
+    font-size: 0.85rem;
+  }
 }
