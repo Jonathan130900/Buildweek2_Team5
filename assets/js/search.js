@@ -1,6 +1,5 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
-const TOKEN = "Bearer YOUR_TOKEN_HERE";
-
+const TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzViMmQ1ZGQyMjA3MTAwMTVkZTJmMWYiLCJpYXQiOjE3MzQ0Njg0NjEsImV4cCI6MTczNTY3ODA2MX0.Q89cp9cHweU9w5ZWnXYvoPa9mO26MvOv3dP8Qzmkusc";
 const searchBar = document.getElementById("searchBar");
 const form = document.getElementById("form");
 const showSong = document.getElementById("showSong");
@@ -14,16 +13,16 @@ let currentAudio = null;
 let isPlaying = false;
 let songList = [];
 let currentSongIndex = 0;
-const volumeBar = document.querySelector(".progress-bar");
+const volumeBar = document.querySelector(".volume-bar");
+const songProgress = document.getElementById("songProgress");
+const currentTimeDisplay = document.getElementById("currentTime");
+const durationDisplay = document.getElementById("duration");
 
-volumeBar.addEventListener("input", function() {
+volumeBar.addEventListener("input", function () {
     if (currentAudio) {
         currentAudio.volume = volumeBar.value;
     }
 });
-let progressInterval = null;
-let mobileProgressInterval = null;
-let progress = 0;
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -75,8 +74,6 @@ function printSong(data) {
             const artistName = img.nextElementSibling.querySelector('p').textContent;
             const albumCover = img.src;
 
-
-            // Update desktop player
             document.getElementById("songTitle").textContent = songTitle;
             document.getElementById("artistName").textContent = artistName;
             document.getElementById("songCover").src = albumCover;
@@ -96,8 +93,12 @@ function printSong(data) {
             isPlaying = true;
             updatePlayIcons();
             currentSongIndex = Array.from(songImages).indexOf(img);
-            console.log(currentSongIndex);
-            
+            updateProgress();
+            currentAudio.ontimeupdate = updateProgress;
+            currentAudio.onloadedmetadata = function () {
+                durationDisplay.textContent = formatTime(currentAudio.duration);
+                songProgress.max = currentAudio.duration;
+            };
         });
     });
 }
@@ -114,13 +115,13 @@ function updatePlayIcons() {
 
 playIcon.addEventListener("click", function () {
     if (currentAudio) {
-        if (isPlaying) {
-            currentAudio.pause();
-            isPlaying = false;
-            playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
-        } else {
+        if (currentAudio.paused) {
             currentAudio.play();
             isPlaying = true;
+            updatePlayIcons();
+        } else {
+            currentAudio.pause();
+            isPlaying = false;
             updatePlayIcons();
         }
     }
@@ -128,13 +129,13 @@ playIcon.addEventListener("click", function () {
 
 mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
-        if (isPlaying) {
-            currentAudio.pause();
-            isPlaying = false;
-            updatePlayIcons();
-        } else {
+        if (currentAudio.paused) {
             currentAudio.play();
             isPlaying = true;
+            updatePlayIcons();
+        } else {
+            currentAudio.pause();
+            isPlaying = false;
             updatePlayIcons();
         }
     }
@@ -178,7 +179,34 @@ function playSongAtIndex(index) {
     currentAudio.play();
     isPlaying = true;
     updatePlayIcons();
+    updateProgress();
+    currentAudio.ontimeupdate = updateProgress;
+    currentAudio.onloadedmetadata = function () {
+        durationDisplay.textContent = formatTime(currentAudio.duration);
+        songProgress.max = currentAudio.duration;
+    };
 }
 
 document.querySelector('.bi-skip-start-fill').addEventListener("click", prevSong);
 document.querySelector('.bi-skip-end-fill').addEventListener("click", nextSong);
+
+function updateProgress() {
+    if (currentAudio) {
+        const currentTime = currentAudio.currentTime;
+        const progressPercentage = (currentTime / currentAudio.duration) * 100;
+        songProgress.setAttribute("style", `width: ${progressPercentage}%`)
+        currentTimeDisplay.textContent = formatTime(currentTime);
+    }
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+songProgress.addEventListener("input", function () {
+    if (currentAudio) {
+        currentAudio.currentTime = songProgress.value;
+    }
+});
