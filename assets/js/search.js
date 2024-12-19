@@ -11,6 +11,7 @@ let songList = [];
 let currentSongIndex = 0;
 const volumeBar = document.querySelector(".volume-bar");
 const songProgress = document.getElementById("songProgress");
+const songProgressMobile = document.getElementById("songProgressMobile");
 const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 
@@ -179,6 +180,7 @@ function playSongAtIndex(index) {
     currentAudio.onloadedmetadata = function () {
         durationDisplay.textContent = formatTime(currentAudio.duration);
         songProgress.max = currentAudio.duration;
+        songProgressMobile.max = currentAudio.duration;
     };
 }
 
@@ -189,7 +191,8 @@ function updateProgress() {
     if (currentAudio) {
         const currentTime = currentAudio.currentTime;
         const progressPercentage = (currentTime / currentAudio.duration) * 100;
-        songProgress.setAttribute("style", `width: ${progressPercentage}%`)
+        songProgress.setAttribute("style", `width: ${progressPercentage}%`);
+        songProgressMobile.setAttribute("style", `width: ${progressPercentage}%`)
         currentTimeDisplay.textContent = formatTime(currentTime);
     }
 }
@@ -203,5 +206,11 @@ function formatTime(seconds) {
 songProgress.addEventListener("input", function () {
     if (currentAudio) {
         currentAudio.currentTime = songProgress.value;
+    }
+});
+
+songProgressMobile.addEventListener("input", function () {
+    if (currentAudio) {
+        currentAudio.currentTime = songProgressMobile.value;
     }
 });
