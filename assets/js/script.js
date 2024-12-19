@@ -39,20 +39,22 @@ class Artists {
 }
 
 class Tracks {
-    constructor(_title, _cover_big, _rank, _duration) {
+    constructor(_title, _cover_big, _rank, _duration, _preview) {
         this.title = _title;
         this.cover_big = _cover_big;
         this.rank = _rank;
         this.duration = _duration;
+        this.preview = _preview;
     }
 }
 
 class TracksAlbum {
-    constructor(_title, _artist, _rank, _duration) {
+    constructor(_title, _artist, _rank, _duration, _preview) {
         this.title = _title;
         this.artist = _artist;
         this.rank = _rank;
         this.duration = _duration;
+        this.preview = _preview;
     }
 }
 
@@ -166,7 +168,7 @@ async function fetchTracks() {
                 const datas = data.data;
                 const arrTracksOneArtist = [];
                 datas.forEach((element) => {
-                    arrTracksOneArtist.push(new Tracks(element.title, element.album.cover_big, element.rank, element.duration));
+                    arrTracksOneArtist.push(new Tracks(element.title, element.album.cover_big, element.rank, element.duration, element.preview));
                 });
                 arrTracks.push(arrTracksOneArtist);
             } else {
@@ -194,7 +196,7 @@ async function randomAlbum() {
                     console.log("album id: ", data.id);
                     const arrTracksAlbum = [];
                     data.tracks.data.forEach((element) => {
-                        arrTracksAlbum.push(new TracksAlbum(element.title, element.artist.name, element.rank, element.duration));
+                        arrTracksAlbum.push(new TracksAlbum(element.title, element.artist.name, element.rank, element.duration, element.preview));
                     });
                     let album = new Albums(data.title, data.cover_big, data.label, arrTracksAlbum, data.artist.name, data.artist.picture_big, data.release_date, data.nb_tracks, data.duration);
                     arrAlbums.push(album);
