@@ -1,438 +1,623 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spotify-Search</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <header>
-    <nav class="navHome bg-black bg-opacity-50 pt-2">
-      <a href="Javascript:void(0)" class="threeDots text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-three-dots"></i>
-      </a>
-      <a href="index.html" class="text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-house-door-fill"></i>
-        <p class="fs-6">Home</p>
-      </a>
-      <a href="search.html" class="text-light text-decoration-none text-center pb-0"><i class="bi bi-search"></i>
-        <p class="fs-6">Cerca</p>
-      </a>
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center"><i class="bi bi-collection"></i>
-        <p class="fs-6">La tua libreria</p>
-      </a>
-    </nav>
-    <nav class="navHome2 bg-black bg-opacity-50 pt-2">
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-plus-square-fill"></i>
-        <p class="fs-6">Crea Playlist</p>
-      </a>
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center pb-0"><i
-          class="bi bi-suit-heart-fill"></i>
-        <p class="fs-6">Brani che ti piacciono</p>
-      </a>
-      <a href="Javascript:void(0)" class="text-light text-decoration-none text-center"><i
-          class="bi bi-bookmark-fill"></i>
-        <p class="fs-6">I tuoi episodi</p>
-      </a>
-      <div class="sidebar-links">
-        <a href="Javascript:void(0)" class="text-decoration-none">
-          <div class="card p-2">
-            <img src="assets/imgs/Blood-Moon-586081787.webp" class="card-img-top" style="width: 16em;">
-            <div class="card-body p-0">
-              <h5 class="card-title text-light fs-6">n e v e r l a n d s . 6 6 6 . ✡</h5>
-              <p class="card-text mt-5 mb-4">مادونا عاهرة اغتصبها صيني☪</p>
-            </div>
-          </div>
-        </a>
-        <a href="Javascript:void(0)" class="text-decoration-none">
-          <div class="card p-2">
-            <img src="assets/imgs/download.jpg" class="card-img-top" style="width: 16em;">
-            <div class="card-body p-0">
-              <h5 class="card-title text-light fs-6">Chilling</h5>
-              <p class="card-text mt-5 mb-4">I'm just a chill guy</p>
-            </div>
-          </div>
-        </a>
-        <a href="Javascript:void(0)" class="text-decoration-none">
-          <div class="card p-2">
-            <img src="assets/imgs/pexels-lucie-liz-3165335.jpg" class="card-img-top" style="width: 16em;">
-            <div class="card-body p-0">
-              <h5 class="card-title text-light fs-6">Gaming</h5>
-              <p class="card-text mt-5 mb-4">game plus ultra rank 1 one week turbo try <br> harding playlist</p>
-            </div>
-          </div>
-        </a>
-        <a href="Javascript:void(0)" class="text-decoration-none">
-          <div class="card p-2">
-            <img src="assets/imgs/images.jpeg" class="card-img-top" style="width: 16em;">
-            <div class="card-body p-0">
-              <h5 class="card-title text-light fs-6">my Dopamine</h5>
-              <p class="card-text mt-5 mb-4">Disco music playlist</p>
-            </div>
-          </div>
-        </a>
-        <a href="Javascript:void(0)" class="text-decoration-none invisible">
-          <div class="card p-2">
-            <div class="card-body p-0">
-              <h5 class="card-title text-light fs-6">my Dopamine</h5>
-              <p class="card-text mt-5 mb-4">Disco music playlist</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </nav>
-    <div class="container-fluid d-lg-none ms-3 mt-3">
-      <div class="row">
-        <div class="col-12 text-start h1">
-          <span class="text-light">Cerca</span>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div id="top-main-home" class="pb-2 d-flex justify-content-between">
-      <div class="btn-top-home mt-3 d-none d-lg-block">
-        <button class="d-none d-lg-inline-block" type="button">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="d-none d-lg-inline-block ms-2" type="button">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div id="searchSection">
-        <div class="container-fluid mt-3">
-          <div class="row">
-            <div class="px-4">
-              <form class="input-group custom-input-group" id="form">
-                <button type="submit" id="search" class="btn bg-transparent border-0">
-                  <i class="bi bi-search text-light"></i>
-                </button>
-                <input type="text" id="searchBar" class="form-control border-0 search-input"
-                  placeholder="Cosa vuoi ascoltare?" aria-label="Search" />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="assets/imgs/main/image-17.jpg" height="100%" />
-          Mario Rossi
-        </button>
-        <ul class="dropdown-menu  dropdown-menu-end">
-          <li>
-            <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
-              <p>Account</p>
-              <i class="bi bi-box-arrow-up-right"></i>
+    <header>
+        <nav class="navHome bg-black bg-opacity-50 pt-2">
+            <a href="Javascript:void(0)" class="threeDots text-light text-decoration-none text-center pb-0"><i
+                    class="bi bi-three-dots"></i>
             </a>
-          </li>
-          <li><a class="dropdown-item" href="Javascript:void(0)">Profilo</a></li>
-          <li>
-            <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
-              <p>Effettua l'upgrade a Premium</p>
-              <i class="bi bi-box-arrow-up-right"></i>
+            <a href="index.html" class="text-light text-decoration-none text-center pb-0"><i
+                    class="bi bi-house-door-fill"></i>
+                <p class="fs-6">Home</p>
             </a>
-          </li>
-          <li><a class="dropdown-item" href="Javascript:void(0)">Impostazioni</a></li>
-          <hr />
-          <li><a class="dropdown-item" href="Javascript:void(0)" style="margin: 0">Esci</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="showSong">
+            <a href="search.html" class="text-light text-decoration-none text-center pb-0"><i class="bi bi-search"></i>
+                <p class="fs-6">Cerca</p>
+            </a>
+            <a href="Javascript:void(0)" class="text-light text-decoration-none text-center"><i
+                    class="bi bi-collection"></i>
+                <p class="fs-6">La tua libreria</p>
+            </a>
+        </nav>
+        <nav class="navHome2 bg-black bg-opacity-50 pt-2">
+            <a href="Javascript:void(0)" class="text-light text-decoration-none text-center pb-0"><i
+                    class="bi bi-plus-square-fill"></i>
+                <p class="fs-6">Crea Playlist</p>
+            </a>
+            <a href="Javascript:void(0)" class="text-light text-decoration-none text-center pb-0"><i
+                    class="bi bi-suit-heart-fill"></i>
+                <p class="fs-6">Brani che ti piacciono</p>
+            </a>
+            <a href="Javascript:void(0)" class="text-light text-decoration-none text-center"><i
+                    class="bi bi-bookmark-fill"></i>
+                <p class="fs-6">I tuoi episodi</p>
+            </a>
+            <div class="sidebar-links">
+                <a href="Javascript:void(0)" class="text-decoration-none">
+                    <div class="card p-2">
+                      <img src="assets/imgs/Blood-Moon-586081787.webp" class="card-img-top" style="width: 16em;">
+                      <div class="card-body p-0">
+                        <h5 class="card-title text-light fs-6">n e v e r l a n d s . 6 6 6 . ✡</h5>
+                        <p class="card-text mt-5 mb-4">مادونا عاهرة اغتصبها صيني☪</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="Javascript:void(0)" class="text-decoration-none">
+                    <div class="card p-2">
+                      <img src="assets/imgs/download.jpg" class="card-img-top" style="width: 16em;">
+                      <div class="card-body p-0">
+                        <h5 class="card-title text-light fs-6">Chilling</h5>
+                        <p class="card-text mt-5 mb-4">I'm just a chill guy</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="Javascript:void(0)" class="text-decoration-none">
+                    <div class="card p-2">
+                      <img src="assets/imgs/pexels-lucie-liz-3165335.jpg" class="card-img-top" style="width: 16em;">
+                      <div class="card-body p-0">
+                        <h5 class="card-title text-light fs-6">Gaming</h5>
+                        <p class="card-text mt-5 mb-4">game plus ultra rank 1 one week turbo try <br> harding playlist</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="Javascript:void(0)" class="text-decoration-none">
+                    <div class="card p-2">
+                      <img src="assets/imgs/images.jpeg" class="card-img-top" style="width: 16em;">
+                      <div class="card-body p-0">
+                        <h5 class="card-title text-light fs-6">my Dopamine</h5>
+                        <p class="card-text mt-5 mb-4">Disco music playlist</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="Javascript:void(0)" class="text-decoration-none invisible">
+                    <div class="card p-2">
+                      <div class="card-body p-0">
+                        <h5 class="card-title text-light fs-6">my Dopamine</h5>
+                        <p class="card-text mt-5 mb-4">Disco music playlist</p>
+                      </div>
+                    </div>
+                  </a>
+            </div>
+        </nav>
+    </header>
 
-    </div>
-    <div id="searchForEverythingSection">
-      <div class="container-fluid mt-4">
-        <div class="row">
-          <div class="col-12 text-center text-lg-start">
-            <h4 class="text-light mb-4">Sfoglia Tutto</h4>
-          </div>
-        </div>
-        <div class="row g-4">
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-danger">
-              <div class="card-body">
-                <h5 class="card-title text-white">Per te</h5>
-                <img src="assets/imgs/search/image-1.jpeg" class="rotated-img" />
-              </div>
+    <main>
+        <div class="skeleton-container">
+            <!-- Skeleton Card 1 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
             </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-primary">
-              <div class="card-body">
-                <h5 class="card-title text-white">Podcast</h5>
-                <img src="assets/imgs/search/image-2.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-success">
-              <div class="card-body">
-                <h5 class="card-title text-white">Nuove uscite</h5>
-                <img src="assets/imgs/search/image-3.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-warning">
-              <div class="card-body">
-                <h5 class="card-title text-white">Pop</h5>
-                <img src="assets/imgs/search/image-4.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-info">
-              <div class="card-body">
-                <h5 class="card-title text-white">Hip-Hop</h5>
-                <img src="assets/imgs/search/image-7.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card bg-secondary">
-              <div class="card-body">
-                <h5 class="card-title text-white">Rock</h5>
-                <img src="assets/imgs/search/image-6.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: pink">
-              <div class="card-body">
-                <h5 class="card-title text-white">Latina</h5>
-                <img src="assets/imgs/search/image-5.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: blueviolet">
-              <div class="card-body">
-                <h5 class="card-title text-white">Classifiche</h5>
-                <img src="assets/imgs/search/image-8.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: goldenrod">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-9.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(48, 13, 247)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-10.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(206, 174, 105)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-11.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(158, 99, 192)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-12.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(110, 193, 204)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-13.jpeg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(125, 202, 142)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-14.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(66, 30, 224)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-15.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(66, 209, 228)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-16.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(136, 62, 62)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-17.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(154, 105, 194)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-18.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(218, 32, 187)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-19.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-lg-3">
-            <div class="cardSearch card" style="background-color: rgb(32, 138, 199)">
-              <div class="card-body">
-                <h5 class="card-title text-white">Musica pop</h5>
-                <img src="assets/imgs/search/image-20.jpg" class="rotated-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <div class="navHomeRight bg-black bg-opacity-50 pt-2">
-      <div class="d-flex justify-content-between align-items-center">
-        <h2 class="h6 text-white ms-4 mt-2">Attività amici</h2>
-        <div class="me-3">
-          <a href="Javascript:void(0)" class="me-1"><i class="bi bi-person-plus-fill text-secondary fs-5"></i></a>
-          <a href="Javascript:void(0)"><i class="bi bi-x-lg text-secondary fs-5"></i></a>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly text-secondary mx-3 mt-5">
-        <img src="assets/imgs/Khaby-lame-One-Piece-1200x675.jpg" class="rounded-circle"
-          style="width: 3em; height: 3em;">
-        <div>
-          <div class="d-flex justify-content-between">
-            <h6 class="m-0">Charlie Hookman</h6>
-            <p class="m-0">4 ore</p>
-          </div>
-          <p class="fs-6 m-0">In Camera • Yumi Zouma</p>
-          <p class="fs-6"><i class="bi bi-disc"></i> EP III</p>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
-        <img src="assets/imgs/La-foto-profilo-di-Lil-Baby-vale-150mila-dollari-1024x1017.jpg" class="rounded-circle"
-          style="width: 3em; height: 3em;">
-        <div>
-          <div class="d-flex justify-content-between">
-            <h6 class="m-0">lightdark02</h6>
-            <p class="m-0">8 ore</p>
-          </div>
-          <p class="fs-6 m-0">Aimed to Kill • Jade LeMac</p>
-          <p class="fs-6"><i class="bi bi-disc"></i> Aimed to Kill</p>
-        </div>
-      </div>
-      <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
-        <img src="assets/imgs/Immagine.png" class="rounded-circle" style="width: 3em; height: 3em;">
-        <div>
-          <div class="d-flex justify-content-between">
-            <h6 class="m-0">Valeria Traverso</h6>
-            <p class="m-0">3 giorni</p>
-          </div>
-          <p class="fs-6 m-0">New Kings • Sleeping Wolf</p>
-          <p class="fs-6"><i class="bi bi-music-note-beamed"></i> Twint Badass Mood</p>
-        </div>
-      </div>
-    </div>
-    <div id="playerSection" class="d-lg-none">
-      <div class="container-fluid">
-        <div class="d-flex justify-content-between align-items-center player-container">
-          <div>
-            <img src="assets/imgs/search/image-1.jpeg" alt="Copertina della canzone" class="rounded-circle song-cover" />
-          </div>
-          <div class="flex-grow-1 d-flex justify-content-center">
-            <div
-              class="text-white d-flex justify-content-center align-items-center overflow-hidden song-title-container">
-              <div class="marquee">
-                <h6 class="mb-0">
-                  Nessunca canzone in riproduzione
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center">
-            <i class="bi bi-volume-up text-white me-3 player-icon"></i>
-            <i class="bi bi-heart text-white me-3 player-icon"></i>
-            <i class="bi bi-play-fill text-white player-icon" id="player-icon2"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="desktopPlayerSection" class="d-none d-lg-block">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-3 d-flex align-items-center">
-            <img id="songCover" src="assets/imgs/search/image-1.jpeg" alt="Copertina della canzone"
-              class="me-3 song-cover-desktop" />
-            <div>
-              <h6 id="songTitle" class="mb-0">Nessuna canzone in riproduzione</h6>
-              <p id="artistName" class="mb-0 text-white-50"></p>
-            </div>
-            <i class="bi bi-heart text-white ms-3 player-icon"></i>
-          </div>
 
-          <div class="col-6 text-center">
-            <div class="d-flex justify-content-center align-items-center">
-              <i class="bi bi-shuffle text-white mx-2 player-icon" id="shuffleIcon"></i>
-              <i class="bi bi-skip-start-fill text-white mx-2 player-icon"></i>
-              <div class="play-button-circle mx-2" id="playIcon">
-                <i class="bi bi-play-fill text-black"></i>
-              </div>
-              <i class="bi bi-skip-end-fill text-white mx-2 player-icon"></i>
-              <i class="fa-solid fa-repeat" id="repeatIcon" style="color: #ffffff"></i>
+            <!-- Skeleton Card 2 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
             </div>
-          </div>
-          <div class="col-3 text-end d-flex align-items-center justify-content-end">
-            <i class="bi bi-mic text-white mx-2 player-icon"></i>
-            <i class="bi bi-speaker text-white mx-2 player-icon"></i>
-            <i class="bi bi-volume-up text-white mx-2 player-icon"></i>
-            <div class="progress-container mx-2">
-              <input type="range" class="volume-bar" min="0" max="1" value="0" step="0.1" />
+
+            <!-- Skeleton Card 3 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
             </div>
-            <i class="bi bi-arrows-fullscreen text-white mx-2 player-icon"></i>
-          </div>
+            <!-- Skeleton Card 1 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+            </div>
+
+            <!-- Skeleton Card 2 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+            </div>
+
+            <!-- Skeleton Card 3 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+            </div>
+            <!-- Skeleton Card 1 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+            </div>
+
+            <!-- Skeleton Card 2 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+            </div>
+
+            <!-- Skeleton Card 3 -->
+            <div class="skeleton-card">
+                <div class="skeleton-image"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-subtitle"></div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <script src="assets/js/search.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+        <div id="main-home" class="d-none">
+            <div class="mainMenu mt-2">
+                <div id="top-main-home" class="pb-2 d-flex justify-content-between">
+                    <div class="btn-top-home">
+                        <button class="d-none d-lg-inline-block" type="button">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </button>
+                        <button class="d-none d-lg-inline-block ms-2" type="button">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="assets/imgs/main/image-17.jpg" height="100%" />
+                            Mario Rossi
+                        </button>
+                        <ul class="dropdown-menu  dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
+                                    <p>Account</p>
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="Javascript:void(0)">Profilo</a></li>
+                            <li>
+                                <a class="dropdown-item d-flex justify-content-between" href="Javascript:void(0)">
+                                    <p>Effettua l'upgrade a Premium</p>
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item" href="Javascript:void(0)">Impostazioni</a></li>
+                            <hr />
+                            <li><a class="dropdown-item" href="Javascript:void(0)" style="margin: 0">Esci</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="p-3 d-flex bg-black justify-content-between">
+                    <div class="d-flex album-big">
+                        <div class="pt-2 pb-2">
+                            <img src="/assets/imgs/fedez_salmo_viola_cover-jpg-scaled.jpg" style="width: 13em;" />
+                        </div>
+                        <div class="ps-3 pe-5">
+                            <h6 class="text-white">ALBUM</h6>
+                            <h2 class="songTitle text-white">VIOLA (feat. Salmo)</h2>
+                            <p class="text-white">Fedez, Salmo</p>
+                            <div id="btns-carousel" class="d-flex mt-3 align-items-center text-white">
+                                <button id="uno">Play</button>
+                                <button id="due">Salva</button>
+                                <a href="Javascript:void(0)"><i class="bi bi-three-dots text-white fs-3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-start">
+                        <button id="nascondi-annunci">NASCONDI ANNUNCI</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center p-2">
+                <h1 class="text-light ms-2">Buonasera</h1>
+                <div class="d-lg-none">
+                    <a href="Javascript:void(0)"><i class="bi bi-bell text-light fs-2 me-3"></i></a>
+                    <a href="Javascript:void(0)"><i class="bi bi-clock-history text-light fs-2 me-3"></i></a>
+                    <a href="Javascript:void(0)"><i class="bi bi-gear text-light fs-2"></i></a>
+                </div>
+            </div>
+            <div class="d-flex p-2 pt-4 d-lg-none">
+                <a href="Javascript:void(0)"
+                    class="ms-4 me-5 text-light text-decoration-none fs-5 grey p-2 rounded">Musica</a>
+                <a href="Javascript:void(0)" class="text-light text-decoration-none fs-5 grey p-2 rounded">Podcast e
+                    show</a>
+            </div>
+            <div class="row justify-content-evenly pb-4">
+                <div class="card-button tagStart col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
+                    <div class="col-3 d-flex flex-wrap">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                    </div>
+                    <p class="ms-2 text-light"></p>
+                </div>
+                <div class="card-button tagStart col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
+                    <div class="col-3 d-flex flex-wrap">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                    </div>
+                    <p class="ms-2 text-light"></p>
+                </div>
+                <div class="card-button tagStart col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
+                    <div class="col-3 d-flex flex-wrap">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                    </div>
+                    <p class="ms-2 text-light"></p>
+                </div>
+                <div class="card-button tagStart col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
+                    <div class="col-3 d-flex flex-wrap">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                    </div>
+                    <p class="ms-2 text-light"></p>
+                </div>
+                <div class="card-button tagStart col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
+                    <div class="col-3 d-flex flex-wrap">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                    </div>
+                    <p class="ms-2 text-light"></p>
+                </div>
+                <div class="card-button tagStart col-5 col-lg-4 d-flex align-items-center grey p-0 rounded mt-3">
+                    <div class="col-3 d-flex flex-wrap">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                        <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                    </div>
+                    <p class="ms-2 text-light"></p>
+                </div>
+            </div>
+            <div class="container px-4 albums">
+                <div class="card-button card mt-4 rounded-3">
+                    <div class="card-body">
+                        <div class="row height-card">
+                            <div class="col-6 d-flex flex-wrap">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-100" alt="">
+                            </div>
+                            <div class="col-6 pe-5">
+                                <p>Playlist</p>
+                                <h4 class="text-white">Study and work space</h4>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 d-flex align-items-center">
+                                <i class="bi heart bi-heart"></i>
+                                <i class="bi bi-three-dots-vertical ms-4"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                                <p>16 brani</p>
+                                <div class="play-div d-flex justify-content-center align-items-center ms-3">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-button card mt-4 rounded-3">
+                    <div class="card-body">
+                        <div class="row height-card">
+                            <div class="col-6 d-flex flex-wrap">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-100" alt="">
+                            </div>
+                            <div class="col-6 pe-5">
+                                <p>Playlist</p>
+                                <h4 class="text-white">Study and work space</h4>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 d-flex align-items-center">
+                                <i class="bi heart bi-heart"></i>
+                                <i class="bi bi-three-dots-vertical ms-4"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                                <p>16 brani</p>
+                                <div class="play-div d-flex justify-content-center align-items-center ms-3">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-button card mt-4 rounded-3">
+                    <div class="card-body">
+                        <div class="row height-card">
+                            <div class="col-6 d-flex flex-wrap">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-100" alt="">
+                            </div>
+                            <div class="col-6 pe-5">
+                                <p>Playlist</p>
+                                <h4 class="text-white">Study and work space</h4>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 d-flex align-items-center">
+                                <i class="bi heart bi-heart"></i>
+                                <i class="bi bi-three-dots-vertical ms-4"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                                <p>16 brani</p>
+                                <div class="play-div d-flex justify-content-center align-items-center ms-3">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-button card mt-4 rounded-3">
+                    <div class="card-body">
+                        <div class="row height-card">
+                            <div class="col-6 d-flex flex-wrap">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-100" alt="">
+                            </div>
+                            <div class="col-6 pe-5">
+                                <p>Playlist</p>
+                                <h4 class="text-white">Study and work space</h4>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 d-flex align-items-center">
+                                <i class="bi heart bi-heart"></i>
+                                <i class="bi bi-three-dots-vertical ms-4"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                                <p>16 brani</p>
+                                <div class="play-div d-flex justify-content-center align-items-center ms-3">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-button card mt-4 rounded-3">
+                    <div class="card-body">
+                        <div class="row height-card">
+                            <div class="col-6 d-flex flex-wrap">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-100" alt="">
+                            </div>
+                            <div class="col-6 pe-5">
+                                <p>Playlist</p>
+                                <h4 class="text-white">Study and work space</h4>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6 d-flex align-items-center">
+                                <i class="bi heart bi-heart"></i>
+                                <i class="bi bi-three-dots-vertical ms-4"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end align-items-center">
+                                <p>16 brani</p>
+                                <div class="play-div d-flex justify-content-center align-items-center ms-3">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards mt-4 rounded-3 invisible">
+                    <div class="card-body">
+                        <div class="row height-card">
+                            <div class="col-6 d-flex flex-wrap">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                                <img src="/assets/imgs/search/image-1.jpeg" class="w-50" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forYou">
+                <div class="d-flex justify-content-between mb-2 mt-4">
+                    <h2 class="h4 text-white">Altro di ciò che ti piace</h2>
+                    <button id="nascondi-annunci" class="text-light">VISUALIZZA TUTTO</button>
+                </div>
+                <div class="row justify-content-evenly">
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">Hot Hits Italia</h5>
+                            <p class="card-text mt-5 mb-4">La playlist più calda del momento</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">big on the internet</h5>
+                            <p class="card-text mt-5 mb-4">iykyk</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">Pop Rising</h5>
+                            <p class="card-text mt-5 mb-4">The hits of tomorrow are on</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">Canzoni Tristi</h5>
+                            <p class="card-text mt-5 mb-4">it's ok not to be ok :'(</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">in tendenza</h5>
+                            <p class="card-text mt-5 mb-4">Viral & Trending: le canzoni</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forYou">
+                <div class="d-flex justify-content-between mb-2 mt-4">
+                    <h2 class="h4 text-white">I tuoi mix preferiti</h2>
+                    <button id="nascondi-annunci" class="text-light">VISUALIZZA TUTTO</button>
+                </div>
+                <div class="row justify-content-evenly">
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">Hot Hits Italia</h5>
+                            <p class="card-text mt-5 mb-4">La playlist più calda del momento</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">big on the internet</h5>
+                            <p class="card-text mt-5 mb-4">iykyk</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">Pop Rising</h5>
+                            <p class="card-text mt-5 mb-4">The hits of tomorrow are on</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">Canzoni Tristi</h5>
+                            <p class="card-text mt-5 mb-4">it's ok not to be ok :'(</p>
+                        </div>
+                    </div>
+                    <div class="card-button col-2 card p-2 first-cards">
+                        <img src="assets/imgs/main/image-1.jpg" class="card-img-top">
+                        <div class="card-body p-0">
+                            <h5 class="card-title text-light fs-6">in tendenza</h5>
+                            <p class="card-text mt-5 mb-4">Viral & Trending: le canzoni</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="invisible d-none d-lg-block" style="height: 5em">
+        </div>
+    </main>
+    <footer>
+        <div class="navHomeRight bg-black bg-opacity-50 pt-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="h6 text-white ms-4 mt-2">Attività amici</h2>
+                <div class="me-3">
+                    <a href="Javascript:void(0)" class="me-1"><i
+                            class="bi bi-person-plus-fill text-secondary fs-5"></i></a>
+                    <a href="Javascript:void(0)"><i class="bi bi-x-lg text-secondary fs-5"></i></a>
+                </div>
+            </div>
+            <div class="d-flex justify-content-evenly text-secondary mx-3 mt-5">
+                <img src="assets/imgs/Khaby-lame-One-Piece-1200x675.jpg" class="rounded-circle"
+                    style="width: 3em; height: 3em;">
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="m-0">Charlie Hookman</h6>
+                        <p class="m-0">4 ore</p>
+                    </div>
+                    <p class="fs-6 m-0">In Camera • Yumi Zouma</p>
+                    <p class="fs-6"><i class="bi bi-disc"></i> EP III</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
+                <img src="assets/imgs/La-foto-profilo-di-Lil-Baby-vale-150mila-dollari-1024x1017.jpg"
+                    class="rounded-circle" style="width: 3em; height: 3em;">
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="m-0">lightdark02</h6>
+                        <p class="m-0">8 ore</p>
+                    </div>
+                    <p class="fs-6 m-0">Aimed to Kill • Jade LeMac</p>
+                    <p class="fs-6"><i class="bi bi-disc"></i> Aimed to Kill</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-evenly text-secondary mx-3 mt-4">
+                <img src="assets/imgs/Immagine.png" class="rounded-circle" style="width: 3em; height: 3em;">
+                <div>
+                    <div class="d-flex justify-content-between">
+                        <h6 class="m-0">Valeria Traverso</h6>
+                        <p class="m-0">3 giorni</p>
+                    </div>
+                    <p class="fs-6 m-0">New Kings • Sleeping Wolf</p>
+                    <p class="fs-6"><i class="bi bi-music-note-beamed"></i> Twint Badass Mood</p>
+                </div>
+            </div>
+        </div>
+        <div id="playerSection" class="d-lg-none">
+            <div class="container-fluid">
+              <div class="d-flex justify-content-between align-items-center player-container">
+                <div>
+                  <img src="assets/imgs/search/image-1.jpeg" alt="Copertina della canzone" class="rounded-circle song-cover" />
+                </div>
+                <div class="flex-grow-1 d-flex justify-content-center">
+                  <div
+                    class="text-white d-flex justify-content-center align-items-center overflow-hidden song-title-container">
+                    <div class="marquee">
+                      <h6 class="mb-0">
+                        Nessunca canzone in riproduzione
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-volume-up text-white me-3 player-icon"></i>
+                  <i class="bi bi-heart text-white me-3 player-icon"></i>
+                  <i class="bi bi-play-fill text-white player-icon" id="player-icon2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="desktopPlayerSection" class="d-none d-lg-block">
+            <div class="container-fluid">
+              <div class="row align-items-center">
+                <div class="col-3 d-flex align-items-center">
+                  <img id="songCover" src="assets/imgs/search/image-1.jpeg" alt="Copertina della canzone"
+                    class="me-3 song-cover-desktop" />
+                  <div>
+                    <h6 id="songTitle" class="mb-0">Nessuna canzone in riproduzione</h6>
+                    <p id="artistName" class="mb-0 text-white-50"></p>
+                  </div>
+                  <i class="bi bi-heart text-white ms-3 player-icon"></i>
+                </div>
+      
+                <div class="col-6 text-center">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <i class="bi bi-shuffle text-white mx-2 player-icon" id="shuffleIcon"></i>
+                    <i class="bi bi-skip-start-fill text-white mx-2 player-icon"></i>
+                    <div class="play-button-circle mx-2" id="playIcon">
+                      <i class="bi bi-play-fill text-black"></i>
+                    </div>
+                    <i class="bi bi-skip-end-fill text-white mx-2 player-icon"></i>
+                    <i class="fa-solid fa-repeat" id="repeatIcon" style="color: #ffffff"></i>
+                  </div>
+                </div>
+                <div class="col-3 text-end d-flex align-items-center justify-content-end">
+                  <i class="bi bi-mic text-white mx-2 player-icon"></i>
+                  <i class="bi bi-speaker text-white mx-2 player-icon"></i>
+                  <i class="bi bi-volume-up text-white mx-2 player-icon"></i>
+                  <div class="progress-container mx-2">
+                    <input type="range" class="progress-bar" min="0" max="100" value="0" step="1" />
+                  </div>
+                  <i class="bi bi-arrows-fullscreen text-white mx-2 player-icon"></i>
+                </div>
+              </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
-
-</html>
