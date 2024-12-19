@@ -10,8 +10,11 @@ let isPlaying = false;
 let songList = [];
 let currentSongIndex = 0;
 const volumeBar = document.querySelector(".volume-bar");
+const songProgress = document.getElementById("songProgress");
+const currentTimeDisplay = document.getElementById("currentTime");
+const durationDisplay = document.getElementById("duration");
 
-volumeBar.addEventListener("input", function() {
+volumeBar.addEventListener("input", function () {
     if (currentAudio) {
         currentAudio.volume = volumeBar.value;
     }
@@ -38,7 +41,7 @@ async function searchSong() {
         }
     } catch (error) {
         console.log("Errore: ", error);
-    };
+    }
 }
 
 function printSong(data) {
@@ -85,8 +88,12 @@ function printSong(data) {
             isPlaying = true;
             updatePlayIcons();
             currentSongIndex = Array.from(songImages).indexOf(img);
-            console.log(currentSongIndex);
-            
+            updateProgress();
+            currentAudio.ontimeupdate = updateProgress;
+            currentAudio.onloadedmetadata = function () {
+                durationDisplay.textContent = formatTime(currentAudio.duration);
+                songProgress.max = currentAudio.duration;
+            };
         });
     });
 }
@@ -103,13 +110,13 @@ function updatePlayIcons() {
 
 playIcon.addEventListener("click", function () {
     if (currentAudio) {
-        if (isPlaying) {
-            currentAudio.pause();
-            isPlaying = false;
-            updatePlayIcons();
-        } else {
+        if (currentAudio.paused) {
             currentAudio.play();
             isPlaying = true;
+            updatePlayIcons();
+        } else {
+            currentAudio.pause();
+            isPlaying = false;
             updatePlayIcons();
         }
     }
@@ -117,13 +124,13 @@ playIcon.addEventListener("click", function () {
 
 mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
-        if (isPlaying) {
-            currentAudio.pause();
-            isPlaying = false;
-            updatePlayIcons();
-        } else {
+        if (currentAudio.paused) {
             currentAudio.play();
             isPlaying = true;
+            updatePlayIcons();
+        } else {
+            currentAudio.pause();
+            isPlaying = false;
             updatePlayIcons();
         }
     }
@@ -161,15 +168,40 @@ function playSongAtIndex(index) {
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
-        fermaBarraProgresso();
     }
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
     isPlaying = true;
     updatePlayIcons();
-    avviaBarraProgresso();
+    updateProgress();
+    currentAudio.ontimeupdate = updateProgress;
+    currentAudio.onloadedmetadata = function () {
+        durationDisplay.textContent = formatTime(currentAudio.duration);
+        songProgress.max = currentAudio.duration;
+    };
 }
 
 document.querySelector('.bi-skip-start-fill').addEventListener("click", prevSong);
 document.querySelector('.bi-skip-end-fill').addEventListener("click", nextSong);
+
+function updateProgress() {
+    if (currentAudio) {
+        const currentTime = currentAudio.currentTime;
+        const progressPercentage = (currentTime / currentAudio.duration) * 100;
+        songProgress.setAttribute("style", `width: ${progressPercentage}%`)
+        currentTimeDisplay.textContent = formatTime(currentTime);
+    }
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+songProgress.addEventListener("input", function () {
+    if (currentAudio) {
+        currentAudio.currentTime = songProgress.value;
+    }
+});

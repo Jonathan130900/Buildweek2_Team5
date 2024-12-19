@@ -416,22 +416,22 @@
               <i class="bi bi-skip-end-fill text-white mx-2 player-icon"></i>
               <i class="fa-solid fa-repeat" id="repeatIcon" style="color: #ffffff"></i>
             </div>
-            <div class="progress-container mt-3">
-              <div class="progress" style="height: 5px; background-color: #555;">
-                <input type="range" id="songProgress" class="progress-bar" value="0" max="100" step="1"/>
+            <div class="mt-3">
+              <div class="d-flex align-items-center">
+                  <span id="currentTime" class="text-white me-2">0:00</span>
+                  <div class="progress" style="height: 5px; background-color: #555; flex-grow: 1;">
+                      <input type="range" id="songProgress" class="progress-bar" style="width: 0%;" value="0" max="100" step="1"/>
+                  </div>
+                  <span id="duration" class="text-white ms-2">0:00</span>
               </div>
-              <div class="d-flex justify-content-between text-white">
-                  <span id="currentTime">0:00</span>
-                  <span id="duration">0:00</span>
-              </div>
-            </div>
+          </div>
           </div>
           <div class="col-3 text-end d-flex align-items-center justify-content-end">
             <i class="bi bi-mic text-white mx-2 player-icon"></i>
             <i class="bi bi-speaker text-white mx-2 player-icon"></i>
             <i class="bi bi-volume-up text-white mx-2 player-icon"></i>
             <div>
-              <input type="range" class="volume-bar" min="0" max="1" value="0" step="0.1" />
+              <input type="range" class="volume-bar" min="0" max="1" value="1" step="0.1" />
             </div>
             <i class="bi bi-arrows-fullscreen text-white mx-2 player-icon"></i>
           </div>
