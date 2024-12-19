@@ -1,12 +1,20 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const TOKEN = "Bearer YOUR_TOKEN_HERE";
+
 const searchBar = document.getElementById("searchBar");
 const form = document.getElementById("form");
 const showSong = document.getElementById("showSong");
 const playIcon = document.getElementById("playIcon");
+const progressBar = document.getElementById('songProgressBar');
+const playIconMobile = document.getElementById("playIconMobile");
+const progressBarMobile = document.getElementById('songProgressBarMobile');
+
 const mobilePlayIcon = document.getElementById("player-icon2");
 let currentAudio = null;
 let isPlaying = false;
+let progressInterval = null;
+let mobileProgressInterval = null;
+let progress = 0;
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -28,7 +36,7 @@ async function searchSong() {
         }
     } catch (error) {
         console.log("Errore: ", error);
-    };
+    }
 }
 
 function printSong(data) {
@@ -48,6 +56,7 @@ function printSong(data) {
                 </div>
             </div>`;
     }
+
     const songImages = document.querySelectorAll('.tagStart img');
     songImages.forEach(img => {
         img.addEventListener('click', function() {
@@ -55,22 +64,23 @@ function printSong(data) {
             const songTitle = img.nextElementSibling.querySelector('h4').textContent;
             const artistName = img.nextElementSibling.querySelector('p').textContent;
             const albumCover = img.src;
+
+            // Update desktop player
             document.getElementById("songTitle").textContent = songTitle;
             document.getElementById("artistName").textContent = artistName;
             document.getElementById("songCover").src = albumCover;
-            document.querySelector("#playerSection .song-cover").src = albumCover;
-            document.querySelector("#playerSection .song-title-container h6").innerHTML = `${songTitle} - ${artistName}`;
             if (currentAudio && !currentAudio.paused) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
+                fermaBarraProgresso();
                 isPlaying = false;
-                updatePlayIcons();
+                playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
             }
 
             currentAudio = new Audio(audioUrl);
             currentAudio.play();
             isPlaying = true;
-            updatePlayIcons();
+            playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
         });
     });
 }
@@ -85,30 +95,17 @@ function updatePlayIcons() {
     }
 }
 
-playIcon.addEventListener("click", function() {
+// Funzione per gestire il play/pause
+function togglePlayPause() {
     if (currentAudio) {
         if (isPlaying) {
             currentAudio.pause();
             isPlaying = false;
-            updatePlayIcons();
+            playIcon.innerHTML = `<i class="bi bi-play-fill text-black"></i>`;
         } else {
             currentAudio.play();
             isPlaying = true;
-            updatePlayIcons();
+            playIcon.innerHTML = `<i class="bi bi-pause-fill text-black"></i>`;
         }
     }
-});
-
-mobilePlayIcon.addEventListener("click", function() {
-    if (currentAudio) {
-        if (isPlaying) {
-            currentAudio.pause();
-            isPlaying = false;
-            updatePlayIcons();
-        } else {
-            currentAudio.play();
-            isPlaying = true;
-            updatePlayIcons();
-        }
-    }
-});
+};
