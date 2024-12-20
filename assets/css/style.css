@@ -1123,10 +1123,8 @@ header {
   width: 350px;
 }
 
-.titleAlbum {
-  margin-left: 70px;
-}
+
 
 .shadow-playlist {
-  box-shadow: 0  -1px 25px white;
+  box-shadow: -5px -5px 50px -10px rgba(255, 255, 255, 0.063);
 }
