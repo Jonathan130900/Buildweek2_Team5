@@ -32,7 +32,7 @@ The sidebar dissapears from both sides and the navbar moves to the bottom of the
 The player takes the position on the bottom of the screen, with a working progress bar, a volume option, a play and pause button and a next and previous button. It will display the album cover and track name selected.
 ## Mobile Screen Size
 The player appears above the navbar icons, displaying the album and the track name has an animation, passing by periodically like in the actual app. this time the only functioning buttons are the play and pause buttons and volume option.
-<hr>
+
 ## This project was created by:
 - Domenico Della Ventura
 - Giacomo Rigo
