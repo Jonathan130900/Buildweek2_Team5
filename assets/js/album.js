@@ -12,7 +12,6 @@ const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 
 
-
 window.onload = function () {
     // Recupera i dati dell'album dal sessionStorage
     const albumData = JSON.parse(sessionStorage.getItem("selectedAlbum"));
@@ -138,6 +137,7 @@ playIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -152,6 +152,7 @@ mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -193,6 +194,7 @@ function playSongAtIndex(index) {
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
+    currentAudio.volume = volumeBar.value;
     isPlaying = true;
     updatePlayIcons();
     updateProgress();
