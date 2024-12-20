@@ -16,6 +16,10 @@ let arrAlbums = [];
 let arrArtists = [];
 let arrTracks = [];
 
+let randomIdAlbum = [];
+let randomIdArtist = [];
+let urlsArtist = [];
+
 class Albums {
     constructor(_title, _cover_big, _label, _tracks, _artist, _artistImg, _year, _nbTracks, _duration) {
         this.title = _title;
@@ -71,42 +75,57 @@ for (let i = 0; i < heartIcons.length; i++) {
 }
 
 window.onload = async function () {
-    // Controlla se il sito è stato già caricato
-    const isFirstLoad = sessionStorage.getItem("isFirstLoad");
+    randomIdAlbums();
+    randomIdArtists();
+    // Esegui le funzioni solo la prima volta
+    await randomAlbum();
+    await randomArtists();
+    main.classList.remove("d-none");
+    skeleton.classList.add("d-none");
+    btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
+    listenersBtn();
 
-    if (!isFirstLoad) {
-        // Esegui le funzioni solo la prima volta
-        await randomAlbum();
-        await randomArtists();
-        main.classList.remove("d-none");
-        skeleton.classList.add("d-none");
-        btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
-        listenersBtn();
-
-        //carica in sessionStorage gli array
-        sessionStorage.setItem("isFirstLoad", "true");
-        sessionStorage.setItem("arrAlbums", JSON.stringify(arrAlbums));
-        sessionStorage.setItem("arrArtists", JSON.stringify(arrArtists));
-        sessionStorage.setItem("arrTracksArtists", JSON.stringify(arrTracks));
-    } else {
-        console.log("Il sito è stato già caricato. Niente funzioni iniziali.");
-        arrAlbums = JSON.parse(sessionStorage.getItem("arrAlbums"));
-        arrArtists = JSON.parse(sessionStorage.getItem("arrArtists"));
-        arrTracks = JSON.parse(sessionStorage.getItem("arrTracksArtists"));
-        printCards();
-        printSecondCards();
-        main.classList.remove("d-none");
-        skeleton.classList.add("d-none");
-        btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
-        listenersBtn();
-    }
 }
+
+// window.onload = async function () {
+//     // Controlla se il sito è stato già caricato
+//     const isFirstLoad = sessionStorage.getItem("isFirstLoad");
+
+//     if (!isFirstLoad) {
+//         randomIdAlbums();
+//         randomIdArtists();
+//         // Esegui le funzioni solo la prima volta
+//         await randomAlbum();
+//         await randomArtists();
+//         main.classList.remove("d-none");
+//         skeleton.classList.add("d-none");
+//         btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
+//         listenersBtn();
+
+//         //carica in sessionStorage gli array
+//         sessionStorage.setItem("isFirstLoad", "true");
+//         sessionStorage.setItem("arrAlbums", JSON.stringify(arrAlbums));
+//         sessionStorage.setItem("arrArtists", JSON.stringify(arrArtists));
+//         sessionStorage.setItem("arrTracksArtists", JSON.stringify(arrTracks));
+//     } else {
+//         console.log("Il sito è stato già caricato. Niente funzioni iniziali.");
+//         arrAlbums = JSON.parse(sessionStorage.getItem("arrAlbums"));
+//         arrArtists = JSON.parse(sessionStorage.getItem("arrArtists"));
+//         arrTracks = JSON.parse(sessionStorage.getItem("arrTracksArtists"));
+//         printCards();
+//         printSecondCards();
+//         main.classList.remove("d-none");
+//         skeleton.classList.add("d-none");
+//         btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
+//         listenersBtn();
+//     }
+// }
 
 function printSecondCards() {
     for (let i = 0; i < 6; i++) {
         const imgs = secondCards[i].getElementsByTagName("img");
         for (let j = 0; j < imgs.length; j++) {
-            if(arrTracks[i][j]){
+            if (arrTracks[i][j]) {
                 const linkImg = arrTracks[i][j].cover_big;
                 imgs[j].src = linkImg;
             }
@@ -118,102 +137,116 @@ function printSecondCards() {
     }
 }
 
-async function randomArtists() {
-    for (let i = 0; i < 6; i++) {
-        let id = Math.floor(Math.random() * 70) + 1;
-        try {
-            const result = await fetch(ARTIST_URL + id, {
-                headers: {
-                    authorization: TOKEN,
-                },
-            });
+async function fetchArtist(id) {
+    try {
+        const result = await fetch(ARTIST_URL + id, {
+            headers: {
+                authorization: TOKEN,
+            },
+        });
 
-            if (result.ok) {
-                const data = await result.json();
-                if (data.id && data.nb_album) {
-                    console.log("Artist id: ", data.id);
-                    let artist = new Artists(data.name, data.picture_big, data.nb_fan, data.tracklist, data.id);
-                    arrArtists.push(artist);
-                } else {
-                    i--;
-                    console.log("id non valido, o artista senza canzoni");
-                }
+        if (result.ok) {
+            const data = await result.json();
+            if (data.id && data.nb_album) {
+                urlsArtist.push(data.tracklist);
+                return data;
             } else {
-                i--;
-                throw new Error('Error getting artist');
+                return fetchArtist(Math.floor(Math.random() * 150) + 1);
             }
-        } catch (err) {
-            console.log("Errore durante la richiesta:", err);
+        } else {
+            return fetchArtist(Math.floor(Math.random() * 150) + 1);
+            throw new Error('Error getting artist');
         }
+    } catch (err) {
+        console.log("Errore durante la richiesta:", err);
     }
+}
 
-    console.log(arrArtists);
-    await fetchTracks();
+async function randomArtists() {
+    try {
+        const promises = randomIdArtist.map(fetchArtist);
+        const artists = await Promise.all(promises);
+        console.log("Artisti: ", artists);
+        artists.forEach((data) => {
+            let artist = new Artists(data.name, data.picture_big, data.nb_fan, data.tracklist, data.id);
+            arrArtists.push(artist);
+        });
+    } catch (error) {
+        console.error('Errore durante il fetch degli artisti:', error);
+    }
+    const promises = urlsArtist.map(fetchTracks);
+    const tracksArtistsAll = await Promise.all(promises);
+    tracksArtistsAll.forEach((artist) => {
+        const arrTracksOneArtist = [];
+        artist.data.forEach((track) => {
+            arrTracksOneArtist.push(new Tracks(track.title, track.album.cover_big, track.rank, track.duration, track.preview));
+        });
+        arrTracks.push(arrTracksOneArtist);
+    });
     printSecondCards();
 }
 
 //faccio la fetch delle traccie di ogni artista, cosi da ricavarmi le immagini delle canzoni e tutti i dati utili per la pagina artist
-async function fetchTracks() {
-    for (let i = 0; i < arrArtists.length; i++) {
-        const linkTracks = arrArtists[i].tracklistURL;
-        try {
-            const result = await fetch(linkTracks, {
-                headers: {
-                    authorization: TOKEN,
-                },
-            });
+async function fetchTracks(url) {
+    try {
+        const result = await fetch(url, {
+            headers: {
+                authorization: TOKEN,
+            },
+        });
 
-            if (result.ok) {
-                const data = await result.json();
-                const datas = data.data;
-                const arrTracksOneArtist = [];
-                datas.forEach((element) => {
-                    arrTracksOneArtist.push(new Tracks(element.title, element.album.cover_big, element.rank, element.duration, element.preview));
-                });
-                arrTracks.push(arrTracksOneArtist);
-            } else {
-                throw new Error('Error getting track');
-            }
-        } catch (err) {
-            console.log("Errore durante la richiesta:", err);
+        if (result.ok) {
+            const data = await result.json();
+            return data;
+        } else {
+            throw new Error('Error getting track');
         }
+    } catch (err) {
+        console.log("Errore durante la richiesta:", err);
+    }
+}
+
+async function fetchAlbum(id) {
+    try {
+        const result = await fetch(ALBUM_URL + id, {
+            headers: {
+                authorization: TOKEN,
+            },
+        });
+
+        if (result.ok) {
+            const data = await result.json();
+            if (data.id) {
+                return data;
+            } else {
+                return fetchAlbum(Math.floor(Math.random() * 550) + 500000);
+            }
+        } else {
+            return fetchAlbum(Math.floor(Math.random() * 550) + 500000);
+            throw new Error('Error getting album');
+        }
+    } catch (err) {
+        console.log("Errore durante la richiesta:", err);
     }
 }
 
 async function randomAlbum() {
-    for (let i = 0; i < 11; i++) {
-        let id = Math.floor(Math.random() * 150) + 500000;
-        try {
-            const result = await fetch(ALBUM_URL + id, {
-                headers: {
-                    authorization: TOKEN,
-                },
+    try {
+        const promises = randomIdAlbum.map(fetchAlbum);
+        const albums = await Promise.all(promises);
+        console.log("Album: ", albums);
+        albums.forEach((albumElement) => {
+            const arrTracksAlbum = [];
+            albumElement.tracks.data.forEach((element) => {
+                arrTracksAlbum.push(new TracksAlbum(element.title, element.artist.name, element.rank, element.duration, element.preview));
             });
-
-            if (result.ok) {
-                const data = await result.json();
-                if (data.id) {
-                    console.log("album id: ", data.id);
-                    const arrTracksAlbum = [];
-                    data.tracks.data.forEach((element) => {
-                        arrTracksAlbum.push(new TracksAlbum(element.title, element.artist.name, element.rank, element.duration, element.preview));
-                    });
-                    let album = new Albums(data.title, data.cover_big, data.label, arrTracksAlbum, data.artist.name, data.artist.picture_big, data.release_date, data.nb_tracks, data.duration);
-                    arrAlbums.push(album);
-                } else {
-                    i--;
-                    console.log("id non valido");
-                }
-            } else {
-                i--;
-                throw new Error('Error getting album');
-            }
-        } catch (err) {
-            console.log("Errore durante la richiesta:", err);
-        }
+            let album = new Albums(albumElement.title, albumElement.cover_big, albumElement.label, arrTracksAlbum, albumElement.artist.name, albumElement.artist.picture_big, albumElement.release_date, albumElement.nb_tracks, albumElement.duration);
+            arrAlbums.push(album);
+        });
+        printCards();
+    } catch (error) {
+        console.error('Errore durante il fetch degli album:', error);
     }
-    console.log(arrAlbums);
-    printCards();
 }
 
 
@@ -288,4 +321,19 @@ function handleArtistClick(artist, tracks) {
 
     // Naviga verso la pagina album.html
     window.location.href = "artist.html";
+}
+
+
+function randomIdAlbums() {
+    for (let i = 0; i < 11; i++) {
+        let id = Math.floor(Math.random() * 550) + 500000;
+        randomIdAlbum.push(id);
+    }
+}
+
+function randomIdArtists() {
+    for (let i = 0; i < 6; i++) {
+        let id = Math.floor(Math.random() * 150) + 1;
+        randomIdArtist.push(id);
+    }
 }
