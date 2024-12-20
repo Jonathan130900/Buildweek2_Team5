@@ -13,7 +13,6 @@ const durationDisplay = document.getElementById("duration");
 const sideBarLinks = document.querySelectorAll(".sidebar-links a");
 
 
-
 window.onload = function () {
     for(let i=0; i<4; i++){
         sideBarLinks[i].addEventListener("click", () => handlePlaylistClick());
@@ -130,6 +129,7 @@ function populateAlbumDetails(album) {
     
                 currentAudio = new Audio(audioUrl);
                 currentAudio.play();
+                currentAudio.volume = volumeBar.value;
                 isPlaying = true;
                 updatePlayIcons();
                 currentSongIndex = Array.from(songLinks).indexOf(link);
@@ -161,6 +161,7 @@ playIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -175,6 +176,7 @@ mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -216,6 +218,7 @@ function playSongAtIndex(index) {
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
+    currentAudio.volume = volumeBar.value;
     isPlaying = true;
     updatePlayIcons();
     updateProgress();

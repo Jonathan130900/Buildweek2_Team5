@@ -87,6 +87,7 @@ function printSong(data) {
 
             currentAudio = new Audio(audioUrl);
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
             currentSongIndex = Array.from(songImages).indexOf(img);
@@ -114,6 +115,7 @@ playIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -128,6 +130,7 @@ mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -174,6 +177,7 @@ function playSongAtIndex(index) {
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
+    currentAudio.volume = volumeBar.value;
     isPlaying = true;
     updatePlayIcons();
     updateProgress();
