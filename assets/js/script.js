@@ -74,52 +74,40 @@ for (let i = 0; i < heartIcons.length; i++) {
     });
 }
 
+
 window.onload = async function () {
-    randomIdAlbums();
-    randomIdArtists();
-    // Esegui le funzioni solo la prima volta
-    await randomAlbum();
-    await randomArtists();
-    main.classList.remove("d-none");
-    skeleton.classList.add("d-none");
-    btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
-    listenersBtn();
+    // Controlla se il sito è stato già caricato
+    const isFirstLoad = sessionStorage.getItem("isFirstLoad");
 
+    if (!isFirstLoad) {
+        randomIdAlbums();
+        randomIdArtists();
+        // Esegui le funzioni solo la prima volta
+        await randomAlbum();
+        await randomArtists();
+        main.classList.remove("d-none");
+        skeleton.classList.add("d-none");
+        btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
+        listenersBtn();
+
+        //carica in sessionStorage gli array
+        sessionStorage.setItem("isFirstLoad", "true");
+        sessionStorage.setItem("arrAlbums", JSON.stringify(arrAlbums));
+        sessionStorage.setItem("arrArtists", JSON.stringify(arrArtists));
+        sessionStorage.setItem("arrTracksArtists", JSON.stringify(arrTracks));
+    } else {
+        console.log("Il sito è stato già caricato. Niente funzioni iniziali.");
+        arrAlbums = JSON.parse(sessionStorage.getItem("arrAlbums"));
+        arrArtists = JSON.parse(sessionStorage.getItem("arrArtists"));
+        arrTracks = JSON.parse(sessionStorage.getItem("arrTracksArtists"));
+        printCards();
+        printSecondCards();
+        main.classList.remove("d-none");
+        skeleton.classList.add("d-none");
+        btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
+        listenersBtn();
+    }
 }
-
-// window.onload = async function () {
-//     // Controlla se il sito è stato già caricato
-//     const isFirstLoad = sessionStorage.getItem("isFirstLoad");
-
-//     if (!isFirstLoad) {
-//         randomIdAlbums();
-//         randomIdArtists();
-//         // Esegui le funzioni solo la prima volta
-//         await randomAlbum();
-//         await randomArtists();
-//         main.classList.remove("d-none");
-//         skeleton.classList.add("d-none");
-//         btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
-//         listenersBtn();
-
-//         //carica in sessionStorage gli array
-//         sessionStorage.setItem("isFirstLoad", "true");
-//         sessionStorage.setItem("arrAlbums", JSON.stringify(arrAlbums));
-//         sessionStorage.setItem("arrArtists", JSON.stringify(arrArtists));
-//         sessionStorage.setItem("arrTracksArtists", JSON.stringify(arrTracks));
-//     } else {
-//         console.log("Il sito è stato già caricato. Niente funzioni iniziali.");
-//         arrAlbums = JSON.parse(sessionStorage.getItem("arrAlbums"));
-//         arrArtists = JSON.parse(sessionStorage.getItem("arrArtists"));
-//         arrTracks = JSON.parse(sessionStorage.getItem("arrTracksArtists"));
-//         printCards();
-//         printSecondCards();
-//         main.classList.remove("d-none");
-//         skeleton.classList.add("d-none");
-//         btnPlay.addEventListener("click", () => handleAlbumClick(arrAlbums[10]));
-//         listenersBtn();
-//     }
-// }
 
 function printSecondCards() {
     for (let i = 0; i < 6; i++) {
