@@ -33,7 +33,7 @@ The player takes the position on the bottom of the screen, with a working progre
 ## Mobile Screen Size
 The player appears above the navbar icons, displaying the album and the track name has an animation, passing by periodically like in the actual app. this time the only functioning buttons are the play and pause buttons and volume option.
 <hr>
-This project was created by:
+## This project was created by:
 - Domenico Della Ventura
 - Giacomo Rigo
 - Jonathan Luca Bergadano
