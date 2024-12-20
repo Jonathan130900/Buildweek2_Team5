@@ -88,14 +88,12 @@ function populateAlbumDetails(tracks) {
             link.addEventListener('click', function () {
                 const audioUrl = link.getAttribute('data-song');
                 const songTitle = link.querySelector('h4').textContent;
-                const artistName = artist.name;
                 const albumCover = link.querySelector("img").src;
     
                 document.getElementById("songTitle").textContent = songTitle;
-                document.getElementById("artistName").textContent = artistName;
                 document.getElementById("songCover").src = albumCover;
                 document.querySelector("#playerSection .song-cover").src = albumCover;
-                document.querySelector("#playerSection .song-title-container h6").innerHTML = `${songTitle} - ${artistName}`;
+                document.querySelector("#playerSection .song-title-container h6").innerHTML = `${songTitle}`;
     
                 if (currentAudio && !currentAudio.paused) {
                     currentAudio.pause();
@@ -106,6 +104,7 @@ function populateAlbumDetails(tracks) {
     
                 currentAudio = new Audio(audioUrl);
                 currentAudio.play();
+                currentAudio.volume = volumeBar.value;
                 isPlaying = true;
                 updatePlayIcons();
                 currentSongIndex = Array.from(songLinks).indexOf(link);
@@ -137,6 +136,7 @@ playIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -151,6 +151,7 @@ mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -195,6 +196,7 @@ function playSongAtIndex(index) {
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
+    currentAudio.volume = volumeBar.value;
     isPlaying = true;
     updatePlayIcons();
     updateProgress();
