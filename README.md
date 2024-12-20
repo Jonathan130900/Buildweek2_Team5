@@ -15,7 +15,7 @@ In the mobile screen format, not much will change but the cards will be in 2 col
 ## Artist Page
 ### Desktop Screen Size
 The Artist Page will display the profile picture of the selected musician showing their name and monthly listeners. Beneath will be the following button, not interactive but simply recreated visually, and the play button, not interactive aswell. It will show a list of single tracks that are their most popular releases that come from different albums, all playable up to a max of 50 displayed music tracks.
-## Mobile Screen Size
+### Mobile Screen Size
 The difference isn't that much compared to the desktop viewing but simply the tracks will be a little more compressed and will lack the number of total listeners, while the play button will be displayed on the left side of the screen, compared to stayon the left with the rest of the buttons.
 ## Album Page
 ### Desktop Screen Size
