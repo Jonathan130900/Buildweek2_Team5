@@ -86,6 +86,7 @@ function printSong(data) {
 
             currentAudio = new Audio(audioUrl);
             currentAudio.play();
+            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
             currentSongIndex = Array.from(songImages).indexOf(img);
