@@ -93,7 +93,7 @@
             </div>
         </nav>
     </header>
-    <main class="bg-black text-white">
+    <main id="artistMain" class="bg-black text-white">
 
         <!-- <figure class="position-relative  vw-100 m-0 p-0">
             <img src="" id="artist-cover" class="img-bg" style="height: 300px" alt="Background Image">
@@ -116,16 +116,17 @@
 
         <div class="container">
             <!--ICONE ALBUM E BRANI-->
-            <div class="row mt-4 d-flex align-items-center icon-hover  ">
-                <button
-                    class="border-0 rounded-circle bg-success text-white  ms-4 order-lg-first order-sm-4 me-lg-4 col-lg-2 col-sm-2 play-btn">
-                    <i class="bi bi-play-fill "></i>
-                </button>
-                <button class="btn border-white w-25 text-white">FOLLOWING</button>
+            <div class="row icon-hover">
+                <div class="my-4 d-flex align-items-center ">
+                    <button
+                        class="border-0 rounded-circle bg-success text-black  ms-4 order-lg-first order-sm-4 me-lg-4 col-lg-2 col-sm-2 play-btn">
+                        <i class="bi bi-play-fill "></i>
+                    </button>
+                    <button type="button" class="btn border-white w-25 text-white animated-button ">FOLLOWING</button>
 
 
-                <i class="bi bi-three-dots-vertical album-icon col-lg-6 col-sm-6 p-lg-0 m-lg-3 m-sm-1 order-lg-4"></i>
-
+                    <i class="bi bi-three-dots-vertical album-icon col-lg-6  col-sm-6 p-lg-0 m-lg-3 m-sm-1 order-lg-4"></i>
+                </div>
             </div>
             <h2>Popolari</h2>
             <div id="track-list-div-artist">
@@ -133,6 +134,7 @@
             </div>
             <div style="height: 10em;"></div>
         </div>
+        <div style="height: 10em;" class="d-none d-lg-block"></div>
     </main>
     <footer>
         <div class="navHomeRight bg-black bg-opacity-50 pt-2">
