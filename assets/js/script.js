@@ -39,20 +39,22 @@ class Artists {
 }
 
 class Tracks {
-    constructor(_title, _cover_big, _rank, _duration) {
+    constructor(_title, _cover_big, _rank, _duration, _preview) {
         this.title = _title;
         this.cover_big = _cover_big;
         this.rank = _rank;
         this.duration = _duration;
+        this.preview = _preview;
     }
 }
 
 class TracksAlbum {
-    constructor(_title, _artist, _rank, _duration) {
+    constructor(_title, _artist, _rank, _duration, _preview) {
         this.title = _title;
         this.artist = _artist;
         this.rank = _rank;
         this.duration = _duration;
+        this.preview = _preview;
     }
 }
 
@@ -130,7 +132,7 @@ async function randomArtists() {
                 const data = await result.json();
                 if (data.id && data.nb_album) {
                     console.log("Artist id: ", data.id);
-                    let artist = new Artists(data.name, data.picture_big, data.nb_fan, data.tracklist);
+                    let artist = new Artists(data.name, data.picture_big, data.nb_fan, data.tracklist, data.id);
                     arrArtists.push(artist);
                 } else {
                     i--;
@@ -166,7 +168,7 @@ async function fetchTracks() {
                 const datas = data.data;
                 const arrTracksOneArtist = [];
                 datas.forEach((element) => {
-                    arrTracksOneArtist.push(new Tracks(element.title, element.album.cover_big, element.rank, element.duration));
+                    arrTracksOneArtist.push(new Tracks(element.title, element.album.cover_big, element.rank, element.duration, element.preview));
                 });
                 arrTracks.push(arrTracksOneArtist);
             } else {
@@ -194,7 +196,7 @@ async function randomAlbum() {
                     console.log("album id: ", data.id);
                     const arrTracksAlbum = [];
                     data.tracks.data.forEach((element) => {
-                        arrTracksAlbum.push(new TracksAlbum(element.title, element.artist.name, element.rank, element.duration));
+                        arrTracksAlbum.push(new TracksAlbum(element.title, element.artist.name, element.rank, element.duration, element.preview));
                     });
                     let album = new Albums(data.title, data.cover_big, data.label, arrTracksAlbum, data.artist.name, data.artist.picture_big, data.release_date, data.nb_tracks, data.duration);
                     arrAlbums.push(album);
@@ -259,7 +261,7 @@ function printCards() {
 
 function listenersBtn() {
     for (let i = 0; i < 6; i++) {
-        cards[i].addEventListener("click", () => handleArtistClick(arrArtists[i]));
+        cards[i].addEventListener("click", () => handleArtistClick(arrArtists[i], arrTracks[i]));
     }
     for (let i = 6; i < 11; i++) {
         cards[i].addEventListener("click", () => handleAlbumClick(arrAlbums[i - 6]));
@@ -279,9 +281,10 @@ function handleAlbumClick(album) {
     window.location.href = "album.html";
 }
 
-function handleArtistClick(artist) {
+function handleArtistClick(artist, tracks) {
     // Salva i dati nel sessionStorage
     sessionStorage.setItem("selectedArtist", JSON.stringify(artist));
+    sessionStorage.setItem("selectedArtistTracks", JSON.stringify(tracks));
 
     // Naviga verso la pagina album.html
     window.location.href = "artist.html";
