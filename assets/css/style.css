@@ -1114,3 +1114,19 @@ header {
     transform: scale(1.05);
    
 }
+
+
+.playlist-img {
+  width: 300px;
+}
+.playlist-img img {
+  width: 350px;
+}
+
+.titleAlbum {
+  margin-left: 70px;
+}
+
+.shadow-playlist {
+  box-shadow: 0  -1px 25px white;
+}
