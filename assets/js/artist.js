@@ -10,9 +10,13 @@ const songProgress = document.getElementById("songProgress");
 const songProgressMobile = document.getElementById("songProgressMobile");
 const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
+const sideBarLinks = document.querySelectorAll(".sidebar-links a");
 
 
 window.onload = function () {
+    for(let i=0; i<4; i++){
+        sideBarLinks[i].addEventListener("click", () => handlePlaylistClick());
+    }
     // Recupera i dati dell'album dal sessionStorage
     const artistData = JSON.parse(sessionStorage.getItem("selectedArtist"));
     const artistTracks = JSON.parse(sessionStorage.getItem("selectedArtistTracks"));
@@ -22,6 +26,19 @@ window.onload = function () {
     } else {
         console.error("Dati dell'artista non trovati nel sessionStorage.");
     }
+}
+
+function handlePlaylistClick(){
+    const arrTracks = JSON.parse(sessionStorage.getItem("arrTracksArtists"));
+    const playlistTracks = [];
+    for(let i=0; i<10; i++){
+        const randomArtist = Math.floor(Math.random()*6);
+        const randomSong = Math.floor(Math.random() * arrTracks[randomArtist].length);
+        playlistTracks.push(arrTracks[randomArtist][randomSong]);
+    }
+    sessionStorage.setItem("selectedTracksPlaylist", JSON.stringify(playlistTracks));
+    
+    window.location.href = "playlist.html";
 }
 
 // Funzione per popolare i dettagli dell'album
@@ -48,7 +65,14 @@ function populateAlbumDetails(artist, tracks) {
         tracks.forEach((track) => {
             const min = Math.floor(track.duration / 60);
             const seconds = track.duration % 60;
-            const durata = `${min}:${seconds}`;
+            let durata = `00`;
+            if(seconds>=10){
+                durata = `${min}:${seconds}`;
+            }else if(seconds === 0){
+                durata = `${min}:00`;
+            }else{
+                durata = `${min}:${seconds}0`;
+            }
 
             trackList.innerHTML += `
                 <li>

@@ -7,6 +7,7 @@ const skeleton = document.getElementsByClassName("skeleton-container")[0];
 const responsiveCards = document.querySelectorAll(".albums .card");
 const btnPlay = document.getElementById("uno");
 const cards = document.getElementsByClassName("card-button");
+const sideBarLinks = document.querySelectorAll(".sidebar-links a");
 
 
 const ALBUM_URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
@@ -291,6 +292,9 @@ function listenersBtn() {
     for (let i = 16; i < 21; i++) {
         cards[i].addEventListener("click", () => handleAlbumClick(arrAlbums[i - 11]));
     }
+    for(let i=0; i<4; i++){
+        sideBarLinks[i].addEventListener("click", () => handlePlaylistClick());
+    }
 }
 
 // Funzione per gestire il click su un album
@@ -309,6 +313,18 @@ function handleArtistClick(artist, tracks) {
 
     // Naviga verso la pagina album.html
     window.location.href = "artist.html";
+}
+
+function handlePlaylistClick(){
+    const playlistTracks = [];
+    for(let i=0; i<10; i++){
+        const randomArtist = Math.floor(Math.random()*6);
+        const randomSong = Math.floor(Math.random() * arrTracks[randomArtist].length);
+        playlistTracks.push(arrTracks[randomArtist][randomSong]);
+    }
+    sessionStorage.setItem("selectedTracksPlaylist", JSON.stringify(playlistTracks));
+
+    window.location.href = "playlist.html";
 }
 
 

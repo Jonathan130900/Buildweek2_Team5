@@ -15,6 +15,7 @@ const songProgressMobile = document.getElementById("songProgressMobile");
 const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 
+
 volumeBar.addEventListener("input", function () {
     if (currentAudio) {
         currentAudio.volume = volumeBar.value;
