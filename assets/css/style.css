@@ -1,58 +1,115 @@
 html,
 body,
 header {
-    background-color: #121212;
+  background-color: #121212;
 }
 
 /* Home css */
 
-#six-cards .col-lg-4{
+#six-cards .col-lg-4 {
     height: 4rem;
 }
 
-@media screen and (max-width: 991px){
-    .dropdown, .forYou{
+.skeleton-container {
+    display: flex;
+    gap: 56px;
+    padding: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .skeleton-card {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .skeleton-image {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(90deg, #55555579 25%, #6f6f6f 50%, #55555579 75%);
+    background-size: 200% 100%;
+    animation: loading 2.5s infinite;
+    border-radius: 12px;
+  }
+
+  .skeleton-title {
+    width: 80%;
+    height: 10px;
+    background: linear-gradient(90deg, #55555579 25%, #6f6f6f 50%, #55555579 75%);
+    background-size: 200% 100%;
+    animation: loading 2.5s infinite;
+    border-radius: 6px;
+  }
+
+  .skeleton-subtitle {
+    width: 60%;
+    height: 10px;
+    background: linear-gradient(90deg, #55555579 25%, #6f6f6f 50%, #55555579 75%);
+    background-size: 200% 100%;
+    animation: loading 2.5s infinite;
+    border-radius: 6px;
+  }
+
+  @keyframes loading {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+@media screen and (max-width: 991px) {
+
+    .dropdown,
+    .forYou {
         display: none;
     }
 }
 
-@media screen and (min-width: 992px){
-    main{
+@media screen and (min-width: 992px) {
+    main {
         width: 65vw;
-        background: linear-gradient(360deg,#0F0F0F,#222222);
+        background: linear-gradient(360deg, #0F0F0F, #222222);
         padding: 1rem;
     }
-    
-    #six-cards .col-lg-4{
+
+    #six-cards .col-lg-4 {
         width: 30%;
         height: 4rem;
     }
 
-    #carouselHome .carousel-item{
+    #carouselHome .carousel-item {
         height: 14rem;
         background: linear-gradient(10deg, #000000 0%, #1F1F1F 60%);
     }
 
-    #carouselHome .carousel-item h6, h2, p{
+    #carouselHome .carousel-item h6,
+    h2,
+    p {
         color: white;
         margin: 0;
     }
-    #carouselHome .carousel-item h6{
+
+    #carouselHome .carousel-item h6 {
         font-size: 0.6rem;
     }
 
-    #carouselHome .carousel-item h2{
+    #carouselHome .carousel-item h2 {
         font-size: 3rem;
         margin-top: 0.7rem;
         font-weight: bolder;
     }
 
-    #carouselHome .carousel-item p{
+    #carouselHome .carousel-item p {
         font-size: 0.8rem;
         font-weight: 200;
     }
 
-    #top-main-home button{
+    #top-main-home button {
         background-color: black;
         border: none;
         border-radius: 30px;
@@ -61,12 +118,12 @@ header {
 
     #top-main-home .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      height: 15px;
-      width: 15px;
-      opacity: 50%;
+        height: 15px;
+        width: 15px;
+        opacity: 50%;
     }
 
-    #top-main-home .dropdown-toggle{
+    #top-main-home .dropdown-toggle {
         height: 30px;
         display: flex;
         justify-content: center;
@@ -76,38 +133,38 @@ header {
         padding: 0.2rem;
     }
 
-    #top-main-home .dropdown-toggle img{
+    #top-main-home .dropdown-toggle img {
         border-radius: 30px;
         margin-right: 0.5rem;
     }
 
-    #top-main-home .dropdown-menu{
+    #top-main-home .dropdown-menu {
         background-color: #282828;
         border: none;
         width: 15rem;
     }
 
-    #top-main-home .dropdown-menu a{
+    #top-main-home .dropdown-menu a {
         color: #EAE9E9;
         font-size: 0.8rem;
         margin-bottom: 0.8rem;
     }
 
-    #top-main-home .dropdown-menu a:hover{
+    #top-main-home .dropdown-menu a:hover {
         background-color: #6c6c6c;
     }
 
-    #top-main-home .dropdown-menu hr{
+    #top-main-home .dropdown-menu hr {
         color: #646464;
         margin: 0;
         margin-bottom: 0.3rem;
     }
 
-    #buonasera{
+    #buonasera {
         font-size: 1.5rem;
     }
 
-    #btns-carousel button{
+    #btns-carousel button {
         padding: 0.5rem 1.4rem 0.5rem 1.4rem;
         border: none;
         border-radius: 20px;
@@ -116,26 +173,26 @@ header {
         font-weight: bold;
     }
 
-    #btns-carousel #uno{
+    #btns-carousel #uno {
         background-color: #1CD760;
     }
 
-    #btns-carousel #uno:hover{
+    #btns-carousel #uno:hover {
         color: white;
     }
 
-    #btns-carousel #due{
+    #btns-carousel #due {
         background-color: transparent;
         color: white;
         border: 1px solid rgba(255, 255, 255, 0.42);
     }
 
-    #btns-carousel #due:hover{
+    #btns-carousel #due:hover {
         color: #1CD760;
         border: 1px solid #1CD760;
     }
 
-    #nascondi-annunci{
+    #nascondi-annunci {
         font-size: 0.7rem;
         padding: 0.2rem 0.9rem 0.2rem 0.9rem;
         border-radius: 20px;
@@ -145,7 +202,7 @@ header {
         font-weight: bold;
     }
 
-    .cards-home-lg{
+    .cards-home-lg {
         width: 19%;
         background-color: #171717;
         margin-bottom: 1.5rem;
@@ -153,83 +210,87 @@ header {
         border-radius: 10px;
     }
 
-    .cards-home-lg img{
+    .cards-home-lg img {
         border-radius: 3px;
     }
 
-    .cards-home-lg h5{
+    .cards-home-lg h5 {
         color: white;
         font-size: 0.9rem;
         margin-top: 0.8rem;
     }
 
-    .cards-home-lg p{
+    .cards-home-lg p {
         color: #8F8F8F;
         font-size: 0.8rem;
     }
 
-    .searchContent {
-        margin: 0;
-    }
+  .searchContent {
+    margin: 0;
+  }
 }
+
 .grey {
-  background-color: #2c2c2c;
+    background-color: #2c2c2c;
 }
 
 .card {
-    background-color: #242424;
+  background-color: #242424;
 }
 
 .card p {
-    color: rgb(153, 153, 153);
-    font-size: 0.8rem;
-    margin: 0;
+  color: rgb(153, 153, 153);
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 .card h4 {
-    font-weight: 400;
-    font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
 .bi-heart,
 .bi-heart-fill {
-    color: green;
-    cursor: pointer;
-    font-size: 2rem;
+  color: green;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
-.bi-three-dots-vertical, .bi-three-dots{
+.bi-three-dots-vertical,
+.bi-three-dots {
     color: rgb(153, 153, 153);
     font-size: 1.7rem;
 }
 
-.bi-three-dots{
+.bi-three-dots {
     font-size: 1.5rem;
 }
 
-.bi-three-dots-vertical:hover, .bi-three-dots:hover {
+.bi-three-dots-vertical:hover,
+.bi-three-dots:hover {
     color: white;
     cursor: pointer;
 }
 
-.bi-three-dots-vertical:hover{
+.bi-three-dots-vertical:hover {
     font-size: 1.7rem;
 }
 
 .play-div {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(26, 26, 26);
-    border-radius: 30px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(26, 26, 26);
+  border-radius: 30px;
 }
 
 .bi-play-fill {
-    color: white;
-    font-size: 2rem;
+  color: black;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 992px) {
+
     .albums,
     .Cerca {
         display: none;
@@ -239,6 +300,10 @@ header {
 /* nav css */
 
 @media screen and (max-width: 992px) {
+    #searchSection {
+        width: 100%;
+    }
+
     .navHome {
         position: fixed;
         bottom: 0;
@@ -249,151 +314,162 @@ header {
         align-items: center;
     }
 
-    .navHome2,
-    .sidebar-link,
-    .navHomeRight,
-    .threeDots,
-    .mainMenu,
-    .arrow {
-        display: none;
-    }
+  .navHome2,
+  .sidebar-link,
+  .navHomeRight,
+  .threeDots,
+  .mainMenu,
+  .arrow {
+    display: none;
+  }
 
-    .navHome a i {
-        font-size: 2rem;
-    }
+  .navHome a i {
+    font-size: 2rem;
+  }
 
-    .player {
-        position: fixed;
-        bottom: 9.5%;
-        left: 3%;
-    }
+  .player {
+    position: fixed;
+    bottom: 9.5%;
+    left: 3%;
+  }
 }
 
 @media screen and (min-width: 993px) {
+    #searchSection {
+        width: 75%;
+    }
+
     .songTitle {
         font-size: 4em;
     }
 
-    .tagStart {
-        width: 30%;
-    }
+  .tagStart {
+    width: 30%;
+  }
 
-    .navHome {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 20%;
-        height: 100vh;
-        z-index: 1000;
-    }
+  .navHome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    z-index: 1000;
+  }
 
-    .navHome2 {
-        position: fixed;
-        top: 20%;
-        left: 0;
-        width: 20%;
-        height: 100vh;
-        z-index: 1000;
-    }
+  .navHome2 {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    z-index: 1000;
+  }
 
-    .navHomeRight {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 15%;
-        height: 100vh;
-        z-index: 1000;
-    }
+  .navHomeRight {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100vh;
+    z-index: 1000;
+  }
 
-    main {
-        width: 65%;
-        margin-left: 20%;
-        padding-left: 2em;
-        padding-right: 2em;
-        height: 100vh;
-        overflow-y: auto;
-    }
+  main {
+    width: 65%;
+    margin-left: 20%;
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 100vh;
+    overflow-y: auto;
+  }
 
-    .navHome a,
-    .navHome2 a {
-        padding: 15px 20px;
-        text-align: left;
-        font-size: 1.2rem;
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
+  .navHome a,
+  .navHome2 a {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 1.2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
 
-    .navHome a i,
-    .navHome2 a i {
-        margin-right: 10px;
-        font-size: 1em;
-    }
+  .navHome a i,
+  .navHome2 a i {
+    margin-right: 10px;
+    font-size: 1em;
+  }
 
-    .navHome a p,
-    .navHome2 a p {
-        margin-bottom: 0;
-    }
+  .navHome a p,
+  .navHome2 a p {
+    margin-bottom: 0;
+  }
 
-    .sidebar-links {
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        max-height: 70vh;
-        padding: 10px 0;
-    }
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 70vh;
+    padding: 10px 0;
+  }
 
-    .sidebar-links a {
-        padding: 10px;
-        margin: 5px 0;
-        border-bottom: 1px solid #333;
-    }
+  .sidebar-links a {
+    padding: 10px;
+    margin: 5px 0;
+    border-bottom: 1px solid #333;
+  }
 
-    .sidebar-links a:hover {
-        background-color: #333;
-    }
+  .sidebar-links a:hover {
+    background-color: #333;
+  }
 
-    .sidebar-links::-webkit-scrollbar, main::-webkit-scrollbar {
+    .sidebar-links::-webkit-scrollbar,
+    main::-webkit-scrollbar {
         width: 1em;
     }
 
-    .sidebar-links::-webkit-scrollbar-thumb, main::-webkit-scrollbar-thumb {
+    .sidebar-links::-webkit-scrollbar-thumb,
+    main::-webkit-scrollbar-thumb {
         background-color: #888;
     }
 
-    .sidebar-links::-webkit-scrollbar-thumb:hover, main::-webkit-scrollbar-thumb:hover {
+    .sidebar-links::-webkit-scrollbar-thumb:hover,
+    main::-webkit-scrollbar-thumb:hover {
         background-color: #555;
     }
 
-    .sidebar-links::-webkit-scrollbar-track, main::-webkit-scrollbar-track {
+    .sidebar-links::-webkit-scrollbar-track,
+    main::-webkit-scrollbar-track {
         background: black;
     }
 
-    #carouselHome .carousel-item{
+    #carouselHome .carousel-item {
         height: 14rem;
         background: linear-gradient(10deg, #000000 0%, #1F1F1F 60%);
     }
 
-    #carouselHome .carousel-item h6, h2, p{
+    #carouselHome .carousel-item h6,
+    h2,
+    p {
         color: white;
         margin: 0;
     }
-    #carouselHome .carousel-item h6{
+
+    #carouselHome .carousel-item h6 {
         font-size: 0.6rem;
     }
 
-    #carouselHome .carousel-item h2{
+    #carouselHome .carousel-item h2 {
         font-size: 3rem;
         margin-top: 0.7rem;
         font-weight: bolder;
     }
 
-    #carouselHome .carousel-item p{
+    #carouselHome .carousel-item p {
         font-size: 0.8rem;
         font-weight: 200;
     }
 
-    #top-main-home button{
+    #top-main-home button {
         background-color: black;
         border: none;
         border-radius: 30px;
@@ -402,12 +478,12 @@ header {
 
     #top-main-home .carousel-control-prev-icon,
     .carousel-control-next-icon {
-      height: 15px;
-      width: 15px;
-      opacity: 50%;
+        height: 15px;
+        width: 15px;
+        opacity: 50%;
     }
 
-    #top-main-home .dropdown-toggle{
+    #top-main-home .dropdown-toggle {
         height: 30px;
         display: flex;
         justify-content: center;
@@ -417,38 +493,38 @@ header {
         padding: 0.2rem;
     }
 
-    #top-main-home .dropdown-toggle img{
+    #top-main-home .dropdown-toggle img {
         border-radius: 30px;
         margin-right: 0.5rem;
     }
 
-    #top-main-home .dropdown-menu{
+    #top-main-home .dropdown-menu {
         background-color: #282828;
         border: none;
         width: 15rem;
     }
 
-    #top-main-home .dropdown-menu a{
+    #top-main-home .dropdown-menu a {
         color: #EAE9E9;
         font-size: 0.8rem;
         margin-bottom: 0.8rem;
     }
 
-    #top-main-home .dropdown-menu a:hover{
+    #top-main-home .dropdown-menu a:hover {
         background-color: #6c6c6c;
     }
 
-    #top-main-home .dropdown-menu hr{
+    #top-main-home .dropdown-menu hr {
         color: #646464;
         margin: 0;
         margin-bottom: 0.3rem;
     }
 
-    #buonasera{
+    #buonasera {
         font-size: 1.5rem;
     }
 
-    #btns-carousel button{
+    #btns-carousel button {
         padding: 0.5rem 1.4rem 0.5rem 1.4rem;
         border: none;
         border-radius: 20px;
@@ -457,26 +533,26 @@ header {
         font-weight: bold;
     }
 
-    #btns-carousel #uno{
+    #btns-carousel #uno {
         background-color: #1CD760;
     }
 
-    #btns-carousel #uno:hover{
+    #btns-carousel #uno:hover {
         color: white;
     }
 
-    #btns-carousel #due{
+    #btns-carousel #due {
         background-color: transparent;
         color: white;
         border: 1px solid rgba(255, 255, 255, 0.42);
     }
 
-    #btns-carousel #due:hover{
+    #btns-carousel #due:hover {
         color: #1CD760;
         border: 1px solid #1CD760;
     }
 
-    #nascondi-annunci{
+    #nascondi-annunci {
         font-size: 0.7rem;
         padding: 0.2rem 0.9rem 0.2rem 0.9rem;
         border-radius: 20px;
@@ -486,7 +562,7 @@ header {
         font-weight: bold;
     }
 
-    .cards-home-lg{
+    .cards-home-lg {
         width: 19%;
         background-color: #171717;
         margin-bottom: 1.5rem;
@@ -494,290 +570,547 @@ header {
         border-radius: 10px;
     }
 
-    .cards-home-lg img{
+    .cards-home-lg img {
         border-radius: 3px;
     }
 
-    .cards-home-lg h5{
+    .cards-home-lg h5 {
         color: white;
         font-size: 0.9rem;
         margin-top: 0.8rem;
     }
 
-    .cards-home-lg p{
+    .cards-home-lg p {
         color: #8F8F8F;
         font-size: 0.8rem;
     }
 }
 
-
 /* album */
 
 .container {
-    color: white;
-    background-color: #121212;
+  color: white;
+  background-color: #121212;
 }
 
 .albumInfo {
-    text-align: left;
-    width: 100%;
+  text-align: left;
+  width: 100%;
 }
 
-.d-flex.justify-content-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#albumButtons button {
+  background-color: black;
+  border: none;
+  border-radius: 30px;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  #albumButtons button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .titleAlbum {
+    font-size: 5em;
+  }
 }
 
 .bandPfp {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.albumDetails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.albumDetails h6 {
+  margin: 0;
 }
 
 .albumYear {
-    color: #8d8d8d;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+}
+
+.albumYear p {
+  margin: 0;
+  color: #8d8d8d;
 }
 
 /* search css */
 
 .custom-input-group {
-    background-color: #3e3e3e;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #3e3e3e;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .input-group-text {
-    padding-left: 12px;
+  padding-left: 12px;
 }
 
 .search-input {
-    background-color: transparent !important;
-    padding-left: 0;
-    color: #ffffff !important;
+  background-color: transparent !important;
+  padding-left: 0;
+  color: #ffffff !important;
 }
 
 .search-input::placeholder {
-    color: #ffffff !important;
-    opacity: 0.7;
+  color: #ffffff !important;
+  opacity: 0.7;
 }
 
 .search-input:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .bi-search {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .cardSearch {
-    overflow: hidden;
-    border: none;
-    height: 8em;
-    position: relative;
+  overflow: hidden;
+  border: none;
+  height: 8em;
+  position: relative;
 }
 
 .card-body {
-    position: relative;
-    padding: 40px;
+  position: relative;
+  padding: 40px;
 }
 
 .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
 }
 
 .rotated-img {
-    position: absolute;
-    right: -10%;
-    bottom: 0%;
-    width: 100px;
-    height: 110px;
-    transform: rotate(25deg);
-    border-radius: 8px;
-    box-shadow: 2px #3e3e3e;
+  position: absolute;
+  right: -10%;
+  bottom: 0%;
+  width: 100px;
+  height: 110px;
+  transform: rotate(25deg);
+  border-radius: 8px;
+  box-shadow: 2px #3e3e3e;
 }
 
 #playerSection {
-    position: fixed;
-    bottom: 9.5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 1200px;
-    background-color: #282828;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+  position: fixed;
+  bottom: 9.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  background-color: #282828;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 .player-container {
-    height: 60px;
-    padding: 0 15px;
+  height: 60px;
+  padding: 0 15px;
 }
 
 .song-cover {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .song-title-container {
-    width: 200px;
-    position: relative;
+  width: 200px;
+  position: relative;
 }
 
 /* animazione testo barra */
 
 .marquee {
-    white-space: nowrap;
-    animation: marquee 10s linear infinite;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
 }
 
 .player-icon {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 @keyframes marquee {
     0% {
-        transform: translateX(170%);
+        transform: translateX(220%);
     }
 
     100% {
-        transform: translateX(-170%);
+        transform: translateX(-220%);
     }
 }
 
 .marquee {
-    display: inline-block;
-    min-width: 100%;
+  display: inline-block;
+  min-width: 100%;
 }
 
 .progress-container {
-    width: 60%;
     max-width: 300px;
     margin: 20px auto;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
     width: 100%;
-    /* Per rimuovere lo stile di default su Chrome/Safari */
-    /* appearance: none; */
     height: 8px;
     background: #ccc;
     border-radius: 5px;
-    /* outline: none; */
-    cursor:none;
-  }
-  
-  .progress-bar::-webkit-slider-thumb {
-    /* -webkit-appearance: none; */
-    appearance: none ;
+    cursor: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
     width: 15px;
     height: 15px;
     background: white;
     border-radius: 50%;
     border: 2px solid #fff;
-  }
-  
-  .progress-bar::-moz-range-thumb {
+}
+
+.progress-bar::-moz-range-thumb {
     width: 15px;
     height: 15px;
     background: white;
     border-radius: 50%;
     /* cursor: pointer; */
     border: 2px solid #fff;
-  }
-  
-  .play-btn {
+}
+
+.play-btn {
     width: 60px !important;
     height: 60px;
- 
-  }
+    color: black !important;
+
+}
 
 .album-icon {
-    font-size: 30px;
+  font-size: 30px;
 }
+
 .bi-play-fill {
-   
-    font-size:30px;
+
+    font-size: 30px;
 }
 
 .icon-hover {
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
+
 .icon-hover i:hover {
-    color:green ;
+    color: white;
 }
+
 .icon-hover button i:hover {
-    color:black ;
+    color: black;
 }
 
 #desktopPlayerSection {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #282828;
-  padding: 1rem 0;
-  z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #282828;
+    padding: 1rem 0;
+    z-index: 1000;
 }
 
 #desktopPlayerSection .song-cover-desktop {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
 
 #desktopPlayerSection .play-button-circle {
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #desktopPlayerSection .play-button-circle i {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 #desktopPlayerSection .player-icon {
-  font-size: 1.2rem;
-  cursor: pointer;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 #desktopPlayerSection h6 {
-  font-size: 0.9rem;
-  color: white;
+    font-size: 0.9rem;
+    color: white;
 }
 
 #desktopPlayerSection p {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
 
 .progress-bar {
-  height: 6px;
-  accent-color: rgb(255, 255, 255);
-  border-radius: 2px;
+    height: 6px;
+    accent-color: rgb(255, 255, 255);
+    border-radius: 2px;
 }
 
 .progress-bar::-webkit-slider-thumb {
-  opacity: 0;
+    opacity: 0;
 }
 
-.progress-bar:hover {
+.progress-bar-audio:hover {
     cursor: pointer;
 }
 
-#shuffleIcon, #playIcon, #repeatIcon  {
+#shuffleIcon,
+#playIcon,
+#repeatIcon {
     cursor: pointer;
+}
+
+.player-icon.active {
+    color: #47df7c !important; 
+}
+
+.progress {
+    height: 4px;
+    background-color: #535353;
+    cursor: pointer;
+}
+
+#shuffleIcon,
+#playIcon,
+#repeatIcon {
+    cursor: pointer;
+}
+
+.player-icon.active {
+    color: #47df7c !important; 
+}
+
+.progress {
+    height: 4px;
+    background-color: #535353;
+    cursor: pointer;
+}
+  
+.progress-bar-mobile {
+    width: 0;
+    background-color: #f5f5f5;
+}
+
+#songProgressBarMobile {
+    background-color: #ffffff;
+}
+  
+.progress-bar {
+    width: 0;
+    background-color: #f5f5f5;
+}
+
+#desktopPlayerSection .player-icon,
+#desktopPlayerSection .play-button-circle {
+    transition: transform 0.2s ease-in-out;
+}
+
+#desktopPlayerSection .player-icon:hover,
+#desktopPlayerSection .play-button-circle:hover {
+    transform: scale(1.2);
+}
+
+#desktopPlayerSection .volume-bar {
+    width: 100%;
+}
+
+.volume-bar {
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+.volume-bar:hover {
+    background-color: #47df7c;
+}
+
+.volume-bar::-webkit-slider-thumb:hover {
+    background-color: #47df7c;
+    border-color: #47df7c;
+}
+
+.volume-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+.volume-bar:hover::-moz-range-thumb {
+    background-color: #47df7c;
+    border-color: #47df7c;
+}
+@media screen and (min-width: 991px) {
+  #artist-top5 {
+    width: 60%;
+  }
+}
+
+#artist-top5 img {
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 991px) {
+  #liked-songs {
+    width: 40%;
+  }
+}
+
+#liked-songs img {
+  width: 75px;
+  height: 75px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+
+.hero-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 90%;
+  padding: 0 1rem;
+}
+
+.verified {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.verified i {
+  margin-right: 0.5rem;
+}
+
+.name-artist {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 991px) {
+  .hero {
+    height: 30%;
+  }
+
+  .name-artist {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    height: 35vh;
+  }
+
+  .hero-content {
+    left: 3%;
+    top: 60%;
+    transform: translateY(0);
+  }
+
+  .name-artist {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .verified {
+    font-size: 0.85rem;
+  }
+}
+
+
+.hearth-artist {
+    position: absolute;
+    left: 53px;
+   bottom: 3px;
+   font-size: 13px;
+   color: white;
+   width: 20px;
+   height: 18px !important;
+}
+
+.animated-button:hover {
+    transform: scale(1.05);
+   
+}
+.play-btn:hover {
+    transform: scale(1.05);
+   
 }
