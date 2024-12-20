@@ -106,6 +106,7 @@ function populateAlbumDetails(album) {
     
                 currentAudio = new Audio(audioUrl);
                 currentAudio.play();
+                currentAudio.volume = volumeBar.value;
                 isPlaying = true;
                 updatePlayIcons();
                 currentSongIndex = Array.from(songLinks).indexOf(link);
