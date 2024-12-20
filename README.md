@@ -12,25 +12,25 @@ The Search Page will display a visual-only rendition of the usual genre type of 
 ### Mobile Screen Size
 In the mobile screen format, not much will change but the cards will be in 2 columns instead of 4. Even the search results will not have any difference. This is the page that has the less amount of difference between screen sizes.
 ## 
-### Artist Page
-## Desktop Screen Size
+## Artist Page
+### Desktop Screen Size
 The Artist Page will display the profile picture of the selected musician showing their name and monthly listeners. Beneath will be the following button, not interactive but simply recreated visually, and the play button, not interactive aswell. It will show a list of single tracks that are their most popular releases that come from different albums, all playable up to a max of 50 displayed music tracks.
 ## Mobile Screen Size
 The difference isn't that much compared to the desktop viewing but simply the tracks will be a little more compressed and will lack the number of total listeners, while the play button will be displayed on the left side of the screen, compared to stayon the left with the rest of the buttons.
-### Album Page
-## Desktop Screen Size
+## Album Page
+### Desktop Screen Size
 The Album Page will display the cover of the album and on the right the album name with the name of the artist below the title. Non-interactive buttons are present below that section. A grid shows the title of the tracks, the number of plays and the duration, an ordered list showcases the tracks in their right order of the specific album selected, all playable.
-## Mobile Screen Size
+### Mobile Screen Size
 The album cover shows first with the title and artist name right below it. The button bar has non-interactive icons with the play button and random button displayed on the right. The songs displayed are like the desktop version, without the number of plays and duration.
-### Sidebar
-## Desktop Screen Size
+## Sidebar
+### Desktop Screen Size
 The sidebar has 2 sections: the one on the left has the navigational functionality with the only 2 interactive buttons being Home and Search, including a personal playlist that is not interactive. The right side is a non-interactive friend activity sidebar, recreating how the app does. The sidebar remains the same on all pages.
-## Mobile Screen Size
+### Mobile Screen Size
 The sidebar dissapears from both sides and the navbar moves to the bottom of the screen with the icons Home, Search and Your Library which is the only button that is not interactive.
-### Player
-## Desktop Screen Size
+## Player
+### Desktop Screen Size
 The player takes the position on the bottom of the screen, with a working progress bar, a volume option, a play and pause button and a next and previous button. It will display the album cover and track name selected.
-## Mobile Screen Size
+### Mobile Screen Size
 The player appears above the navbar icons, displaying the album and the track name has an animation, passing by periodically like in the actual app. this time the only functioning buttons are the play and pause buttons and volume option.
 
 ## This project was created by:
