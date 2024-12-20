@@ -723,11 +723,11 @@ header {
 
 @keyframes marquee {
     0% {
-        transform: translateX(170%);
+        transform: translateX(220%);
     }
 
     100% {
-        transform: translateX(-170%);
+        transform: translateX(-220%);
     }
 }
 
@@ -737,7 +737,6 @@ header {
 }
 
 .progress-container {
-    width: 60%;
     max-width: 300px;
     margin: 20px auto;
 }
@@ -849,7 +848,23 @@ header {
     opacity: 0;
 }
 
-.progress-bar:hover {
+.progress-bar-audio:hover {
+    cursor: pointer;
+}
+
+#shuffleIcon,
+#playIcon,
+#repeatIcon {
+    cursor: pointer;
+}
+
+.player-icon.active {
+    color: #47df7c !important; 
+}
+
+.progress {
+    height: 4px;
+    background-color: #535353;
     cursor: pointer;
 }
 
