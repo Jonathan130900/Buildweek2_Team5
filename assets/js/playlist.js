@@ -1,4 +1,4 @@
-const trackListDiv = document.getElementById("track-list-div-artist");
+const trackListDiv = document.getElementById("track-list-div-playlist");
 const playIcon = document.getElementById("playIcon");
 const mobilePlayIcon = document.getElementById("player-icon2");
 let currentAudio = null;
@@ -12,17 +12,15 @@ const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 const sideBarLinks = document.querySelectorAll(".sidebar-links a");
 
-
 window.onload = function () {
+    // Recupera i dati dell'album dal sessionStorage
     for(let i=0; i<4; i++){
         sideBarLinks[i].addEventListener("click", () => handlePlaylistClick());
     }
-    // Recupera i dati dell'album dal sessionStorage
-    const artistData = JSON.parse(sessionStorage.getItem("selectedArtist"));
-    const artistTracks = JSON.parse(sessionStorage.getItem("selectedArtistTracks"));
+    const playlistTracks = JSON.parse(sessionStorage.getItem("selectedTracksPlaylist"));
 
-    if (artistData) {
-        populateAlbumDetails(artistData, artistTracks); // Popola i dettagli dell'album
+    if (playlistTracks) {
+        populateAlbumDetails(playlistTracks); // Popola i dettagli dell'album
     } else {
         console.error("Dati dell'artista non trovati nel sessionStorage.");
     }
@@ -42,25 +40,12 @@ function handlePlaylistClick(){
 }
 
 // Funzione per popolare i dettagli dell'album
-function populateAlbumDetails(artist, tracks) {
+function populateAlbumDetails(tracks) {
     songList = tracks;
-    // Recupera gli elementi esistenti dall'HTML
-    const artistName = document.querySelector(".name-artist");
-    const artistRank = document.getElementById("artist-rank");
-    const artistCover = document.getElementById("artist-cover");
-
-    // Imposta i dettagli del primo album
-    if (artistRank) artistRank.textContent = artist.nb_fan;
-    if (artistName) artistName.textContent = artist.name;
-    if (artistCover) {
-        artistCover.src = artist.picture_big;
-        artistCover.alt = `Copertina di ${artist.name}`;
-    }
-
 
     //Popola la lista delle tracce
-    if (trackListDiv && tracks[0]) {
-        const trackList = document.getElementById("track-list-artist");
+    if (trackListDiv) {
+        const trackList = document.getElementById("track-list-playlist");
 
         tracks.forEach((track) => {
             const min = Math.floor(track.duration / 60);
@@ -121,7 +106,6 @@ function populateAlbumDetails(artist, tracks) {
     
                 currentAudio = new Audio(audioUrl);
                 currentAudio.play();
-                currentAudio.volume = volumeBar.value;
                 isPlaying = true;
                 updatePlayIcons();
                 currentSongIndex = Array.from(songLinks).indexOf(link);
@@ -153,7 +137,6 @@ playIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
-            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -168,7 +151,6 @@ mobilePlayIcon.addEventListener("click", function () {
     if (currentAudio) {
         if (currentAudio.paused) {
             currentAudio.play();
-            currentAudio.volume = volumeBar.value;
             isPlaying = true;
             updatePlayIcons();
         } else {
@@ -213,7 +195,6 @@ function playSongAtIndex(index) {
 
     currentAudio = new Audio(audioUrl);
     currentAudio.play();
-    currentAudio.volume = volumeBar.value;
     isPlaying = true;
     updatePlayIcons();
     updateProgress();
